@@ -11,6 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @Setter
+@Getter
 public class MiddlewareRequest {
 
 
