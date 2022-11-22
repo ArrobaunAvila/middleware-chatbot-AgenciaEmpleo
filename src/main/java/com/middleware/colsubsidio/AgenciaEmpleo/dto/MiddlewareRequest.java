@@ -18,7 +18,6 @@ public class MiddlewareRequest {
     private String index;
     private String type;
     private String side;
-    private String transaction;
     private Date startdate;
     private String messageText;
     private Boolean ok;
@@ -40,5 +39,6 @@ public class MiddlewareRequest {
         private Boolean ok;
         private String request;
         private String response;
+        private String descriptionProcess;
     }
 }

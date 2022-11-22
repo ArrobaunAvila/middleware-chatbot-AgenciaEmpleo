@@ -8,11 +8,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @SpringBootApplication
 @EnableAutoConfiguration
 @EnableFeignClients
+@EnableScheduling
 @CrossOrigin(origins = "*")
 public class MiddlewareChatbotAgenciaEmpleoApplication implements CommandLineRunner {
 

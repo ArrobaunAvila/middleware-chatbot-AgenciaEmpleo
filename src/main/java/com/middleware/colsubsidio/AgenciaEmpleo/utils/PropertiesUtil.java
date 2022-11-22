@@ -53,7 +53,7 @@ public class PropertiesUtil {
     private String parameterTemplateType;
 
     @Value("${parameters.channel}")
-    private String parameterTemlateChannel;
+    private String parameterTemplateChannel;
 
     @Value("${parameters.languagecode}")
     private String parameterTemplateLanguagecode;
@@ -71,10 +71,20 @@ public class PropertiesUtil {
      @Value("${kibana.log.index}")
     private String kibanaIndex;
 
-
     @Value("${kibana.log.type}")
     private String kibanaType;
 
+    @Value("${kibana.log.side.registrar.informacion.preseleccion}")
+    private String process_cv_preselection;
+
+    @Value("${kibana.log.side.registar.informacion.vacante}")
+    private String process_vacante_interes;
+
+    @Value("${kibana.log.side.registrar.agendamiento}")
+    private String process_agenda_cita;
+
+    @Value("${kibana.log.side.cron.envio}")
+    private String process_cron;
 
 
 }

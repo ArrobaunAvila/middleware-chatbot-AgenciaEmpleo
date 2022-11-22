@@ -2,13 +2,13 @@ package com.middleware.colsubsidio.AgenciaEmpleo.api;
 
 import com.middleware.colsubsidio.AgenciaEmpleo.business.ControllerBusiness;
 import com.middleware.colsubsidio.AgenciaEmpleo.dto.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -47,7 +47,7 @@ public class ApiController {
 
     @RequestMapping(value = "/processesVacancy", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ResponseEntity<ResponseDTO> processesVacancyInformation(@RequestBody InformacionVacanteRequest informacionVacanteRequest){
+    public ResponseEntity<ResponseDTO> processesVacancyInformation(@RequestBody ArrayList<InformacionVacanteRequest> informacionVacanteRequest){
        return new ResponseEntity(this.controllerBussiness.procesoInformacionVacanteGestion(informacionVacanteRequest),HttpStatus.OK);
     }
 }

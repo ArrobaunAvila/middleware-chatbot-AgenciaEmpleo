@@ -34,12 +34,12 @@ public class LogService {
 
 
      @Async
-    public void sendLogToKibana(MiddlewareRequest appoinmentKibana, String transaction,String side) {
+    public void sendLogToKibana(MiddlewareRequest appoinmentKibana, Boolean ok,String side) {
 		try{
 			appoinmentKibana.setIndex(propertiesUtil.getKibanaIndex());
 		appoinmentKibana.setType(propertiesUtil.getKibanaType());
 		appoinmentKibana.setSide(side);
-		appoinmentKibana.setTransaction(transaction);
+		appoinmentKibana.setOk(ok);
 		appoinmentKibana.setMilliseconds(handleDate.getMillisecondsFromStartDate(appoinmentKibana.getStartdate()));
 		logClientRest.sendLogtoKibana(appoinmentKibana, getAuthToken());
                 }catch(Exception e){
@@ -47,8 +47,9 @@ public class LogService {
                 }
      }
 
-     public void completeResponseService(MiddlewareRequest.Service service, boolean ok, Object response, boolean converResponseToJson) {
+     public void completeResponseService(MiddlewareRequest.Service service, boolean ok, Object response, boolean converResponseToJson, String description) {
 		service.setOk(ok);
+		service.setDescriptionProcess(description);
 		service.setTime(handleDate.getMillisecondsFromStartDate(service.getDateInitProcess()));
 		if(response != null) {
 			if(converResponseToJson) {

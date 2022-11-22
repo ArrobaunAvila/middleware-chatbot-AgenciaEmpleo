@@ -1,5 +1,8 @@
 package com.middleware.colsubsidio.AgenciaEmpleo.utils;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.middleware.colsubsidio.AgenciaEmpleo.dto.AgendaCitaRequest;
+import com.middleware.colsubsidio.AgenciaEmpleo.model.InformacionAgenda;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -9,12 +12,16 @@ import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 import java.util.TimeZone;
 @Component
 public class HandleDate {
 
     @Autowired
     PropertiesUtil propertiesUtil;
+
+    @Autowired
+    Utils utils;
     private static TimeZone timeZone = TimeZone.getTimeZone("America/Bogota");
 
     public static Date retornDateNow() {
@@ -77,11 +84,10 @@ public class HandleDate {
 		return startDateCast.until(LocalDateTime.now(), ChronoUnit.MILLIS);
 	}
 
-   public  String retornFechaString(String dia, String mes, String hora){
+   public  String retornFechaString(InformacionAgenda.Fecha fecha){
         String date = null;
-        Calendar calendar = Calendar.getInstance();
          try {
-              date = "el día " + dia + " del "+mes+" a las"+hora;
+              date = utils.objetcMapperString(fecha);
          }catch (Exception e){}
          return date;
    }

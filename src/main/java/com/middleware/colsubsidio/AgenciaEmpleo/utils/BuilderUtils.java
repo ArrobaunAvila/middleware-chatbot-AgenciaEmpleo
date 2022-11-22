@@ -1,11 +1,13 @@
 package com.middleware.colsubsidio.AgenciaEmpleo.utils;
 
+import com.google.gson.Gson;
 import com.middleware.colsubsidio.AgenciaEmpleo.dto.AgendaCitaRequest;
 import com.middleware.colsubsidio.AgenciaEmpleo.dto.InformacionHojaDeVidaRequest;
 import com.middleware.colsubsidio.AgenciaEmpleo.dto.InformacionCursoRequest;
 import com.middleware.colsubsidio.AgenciaEmpleo.dto.InformacionVacanteRequest;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.Attends;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.Hsm;
+import com.middleware.colsubsidio.AgenciaEmpleo.model.InformacionAgenda;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.Parameters;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.AgendamientoCita;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.DetalleSolicitud;
@@ -33,6 +35,7 @@ public class BuilderUtils {
     @Autowired
     HandleDate handleDate;
 
+    private GsonUtils gsonUtils;
     public InformacionVacante registerBuilderInformacionVacante(InformacionHojaDeVidaRequest informacionHojaDeVidaRequest, DetalleSolicitud detalleSolicitud) {
 
         return InformacionVacante.builder().idCesante(informacionHojaDeVidaRequest.getInfoCesante().getCesanteId())
@@ -67,8 +70,7 @@ public class BuilderUtils {
                 .celularCesante("57"+agendaCitaRequest.getInfoCesante().getCelular())
                 .nombreAgencia(agendaCitaRequest.getInfoAgenda().getAgencia().getNombre())
                 .direccionAgencia(agendaCitaRequest.getInfoAgenda().getAgencia().getDireccion())
-                .fecha(handleDate.retornFechaString(agendaCitaRequest.getInfoAgenda().getFecha().getDia(),
-                        agendaCitaRequest.getInfoAgenda().getFecha().getMes(), agendaCitaRequest.getInfoAgenda().getFecha().getHora()))
+                .fecha(handleDate.retornFechaString(agendaCitaRequest.getInfoAgenda().getFecha()))
                 .detalleSolicitud(detalleSolicitud).build();
     }
 
@@ -97,7 +99,7 @@ public class BuilderUtils {
         try {
             parameters.setDid(propertiesUtil.getParameterTemplateDid());
             parameters.setType(propertiesUtil.getParameterTemplateType());
-            parameters.setChannel(propertiesUtil.getParameterTemlateChannel());
+            parameters.setChannel(propertiesUtil.getParameterTemplateChannel());
             parameters.setNamespace(propertiesUtil.getParameterTemplateNameSpace());
             parameters.setLanguageCod(propertiesUtil.getParameterTemplateLanguagecode());
             parameters.setBotAttention(propertiesUtil.isParameterTemplateBotAttention());
@@ -128,10 +130,15 @@ public class BuilderUtils {
                 parameters.setHsm(Hsm.builder().destinations(listDestionation).build());
                 parameters.setTemplate(propertiesUtil.getTemplateRegisterCurso());
                 parameters.setParameters(listParameters);
-            } else if(template == 2){
+            } else if(template == 2) {
                 //Parameters Informacion Agendamiento cita
+                gsonUtils = new GsonUtils();
+               InformacionAgenda.Fecha obj =
+                       gsonUtils.toObject(detalleSolicitud.getAgendamientoCita().getFecha(), InformacionAgenda.Fecha.class);
 
-                listParameters = Arrays.asList(detalleSolicitud.getAgendamientoCita().getFecha(),
+                listParameters = Arrays.asList(obj.getDia(),
+                        obj.getHora(),
+                        obj.getMes(),
                         detalleSolicitud.getAgendamientoCita().getNombreAgencia(),
                         detalleSolicitud.getAgendamientoCita().getDireccionAgencia());
 

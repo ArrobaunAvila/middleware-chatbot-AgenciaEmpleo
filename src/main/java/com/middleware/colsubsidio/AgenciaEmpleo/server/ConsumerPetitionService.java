@@ -51,7 +51,7 @@ public class ConsumerPetitionService {
     public void consumerProcessAgencyChatbot() {
         try {
             //this.getToken();
-            //this.processConsumerSendWithoutResponse();
+            this.processConsumerSendWithoutResponse();
         } catch (Exception e) {
             log.error("Error process getApi token", e.getMessage());
         }
@@ -98,11 +98,11 @@ public class ConsumerPetitionService {
         try {
             detalleRepository.getAllDetailsWithoutResponse()
                     .get().stream().forEach(detail -> {
-                        CompletableFuture<HttpStatus> completableFuture = sendHttpRequestInformacion(
+                        CompletableFuture<ResponseEntity> completableFuture = sendHttpRequestInformacion(
                                 builderUtils.mapPrepareParameters(detail, detail.getIdTipoSolicitud()));
-                        HttpStatus response = completableFuture.join();
+                        ResponseEntity response = completableFuture.join();
 
-                        if (response.is2xxSuccessful()) {
+                        if (response.getStatusCode().is2xxSuccessful()) {
                             detail.setEstado("e");
                             detail.setFechaRespuesta(new Date());
                             detail.setRespuestaPeticion(response.toString());
@@ -121,7 +121,8 @@ public class ConsumerPetitionService {
     }
 
     @Async("asyncExecutor")
-    private CompletableFuture<HttpStatus> sendHttpRequestInformacion(Parameters parameters) {
+    private CompletableFuture<ResponseEntity> sendHttpRequestInformacion(Parameters parameters) {
+        ResponseEntity result = null;
         try {
             String json = "";
             RestTemplate restTemplate = new RestTemplate();
@@ -133,13 +134,13 @@ public class ConsumerPetitionService {
             headers.add("Authorization", "Bearer" + propertiesUtil.getAccessTokenTemporal().toString());
             uri.queryParam("asincrono", "true");
             HttpEntity entity = new HttpEntity(utils.objetcMapperString(parameters), headers);
-            Object result = restTemplate.exchange(uri.toUriString(), HttpMethod.POST, entity, Object.class);
+            result = restTemplate.exchange(uri.toUriString(), HttpMethod.POST, entity, Object.class);
 
-            return CompletableFuture.completedFuture(HttpStatus.OK);
+            return CompletableFuture.completedFuture(result);
         } catch (Exception e) {
             log.error("Error process sendHttpRequestInformacion token", e.getMessage(), e.getCause().fillInStackTrace());
         }
-        return CompletableFuture.completedFuture(HttpStatus.BAD_REQUEST);
+        return CompletableFuture.completedFuture(result);
     }
 
 

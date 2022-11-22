@@ -1,7 +1,9 @@
 package com.middleware.colsubsidio.AgenciaEmpleo.services;
 
+import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.AgendamientoCita;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.DetalleSolicitud;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.InformacionVacante;
+import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.RegistroCurso;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.repository.DetalleRepository;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.repository.InformacionVacanteRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -27,7 +29,11 @@ class PublicarServiceTest {
     @Mock
     private InformacionVacante informacionVacante;
 
+    @Mock
+    private RegistroCurso registroCurso;
 
+    @Mock
+    private AgendamientoCita agendamientoCita;
     private DetalleSolicitud detalleSolicitud;
 
     @BeforeEach
