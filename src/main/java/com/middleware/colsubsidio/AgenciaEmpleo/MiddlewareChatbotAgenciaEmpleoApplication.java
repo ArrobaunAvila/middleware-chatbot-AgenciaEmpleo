@@ -5,17 +5,16 @@ import com.middleware.colsubsidio.AgenciaEmpleo.model.repository.DetalleReposito
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @SpringBootApplication
+@EnableAutoConfiguration
+@EnableFeignClients
 @CrossOrigin(origins = "*")
 public class MiddlewareChatbotAgenciaEmpleoApplication implements CommandLineRunner {
-
-    @Autowired
-    DetalleRepository detalleRepository;
-
-
 
     public static void main(String[] args) {
         SpringApplication.run(MiddlewareChatbotAgenciaEmpleoApplication.class, args);
@@ -25,9 +24,5 @@ public class MiddlewareChatbotAgenciaEmpleoApplication implements CommandLineRun
 
        @Override
     public void run(String... args) throws Exception {
-        detalleRepository.getAllDetailsWithoutResponse()
-                .get().forEach(s -> {
-                    System.out.println(s.getId());
-                });
     }
 }

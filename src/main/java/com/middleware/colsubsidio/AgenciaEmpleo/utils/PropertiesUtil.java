@@ -22,6 +22,18 @@ public class PropertiesUtil {
     @Value("${api.hsm.consumo.pass}")
     private String apiHsmPassword;
 
+    @Value("${api.access.token}")
+    private String accessTokenTemporal;
+
+    @Value("${formato.fecha.Agendamiento.cita}")
+    private String validaFormatoFechaApp;
+
+    @Value("${api.hsm.consumo.maxTimeInMillis}")
+    private Long maxConsumerInMillisRequest;
+
+    @Value("${rest.client.conn.max.idle.time}")
+    private long maxIdleTime;
+
     @Value("${template.name.hsm.proceso.informacion.seleccion}")
     private String templateInformacionSeleccion;
 
@@ -34,14 +46,35 @@ public class PropertiesUtil {
     @Value("${template.name.hsm.proceso.informacion.vacante.interes}")
     private String templateInformacionVacanteInteres;
 
-    @Value("${formato.fecha.Agendamiento.cita}")
-    private String validaFormatoFechaApp;
+    @Value("${parameters.did}")
+    private String parameterTemplateDid;
 
-    @Value("${api.hsm.consumo.maxTimeInMillis}")
-    private Long maxConsumerInMillisRequest;
+    @Value("${parameters.type}")
+    private String parameterTemplateType;
 
-    @Value("${id.template.hsm.agencia.procesoCv}")
-    private int procesoSeleccionHojaVida;
+    @Value("${parameters.channel}")
+    private String parameterTemlateChannel;
+
+    @Value("${parameters.languagecode}")
+    private String parameterTemplateLanguagecode;
+
+    @Value("${parameters.botAttention}")
+    private boolean parameterTemplateBotAttention;
+
+    @Value("${parameters.namespace}")
+    private String parameterTemplateNameSpace;
+
+     @Value("${token.logger}")
+    private String tokenLogger;
+
+
+     @Value("${kibana.log.index}")
+    private String kibanaIndex;
+
+
+    @Value("${kibana.log.type}")
+    private String kibanaType;
+
 
 
 }

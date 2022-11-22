@@ -17,7 +17,7 @@ public enum ErrorNum {
 	NO_DELETE_DOCUMENT("053","Warning, Registro cannot be delete, Id No Exist",HttpStatus.NOT_ACCEPTABLE),
 	NO_UPDATE_DOCUMENT("054","Warning, Registro cannot be update, Id No Exist",HttpStatus.NOT_ACCEPTABLE),
 	NO_EXITS_DATA("055","Warning No exist date for processing",HttpStatus.NOT_ACCEPTABLE),
-    NO_SEND_DATA("071", "Warning! Not send data HSM TipoSolicitud", HttpStatus.BAD_REQUEST);
+    NO_SEND_DATA("071", "Warning! Not send data HSM Solicitud", HttpStatus.BAD_REQUEST);
 
     private String code;
     private String description;

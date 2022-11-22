@@ -1,16 +1,15 @@
 package com.middleware.colsubsidio.AgenciaEmpleo.server;
 
 
-import com.middleware.colsubsidio.AgenciaEmpleo.dto.ResponseHsmDTO;
 import com.middleware.colsubsidio.AgenciaEmpleo.enums.ErrorNum;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.Parameters;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.Request;
-import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.DetalleSolicitud;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.repository.DetalleRepository;
 import com.middleware.colsubsidio.AgenciaEmpleo.utils.BuilderUtils;
 import com.middleware.colsubsidio.AgenciaEmpleo.utils.PropertiesUtil;
+import com.middleware.colsubsidio.AgenciaEmpleo.utils.Utils;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Marker;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.scheduling.annotation.Async;
@@ -23,8 +22,6 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import java.util.stream.Stream;
 
 @Service
 @Slf4j
@@ -38,10 +35,12 @@ public class ConsumerPetitionService {
 
     private BuilderUtils builderUtils;
 
-
     private String token;
 
     private LocalDateTime tokenDate;
+
+    @Autowired
+    Utils utils;
 
     public ConsumerPetitionService(PropertiesUtil propertiesUtil, DetalleRepository detalleRepository, BuilderUtils builderUtils) {
         this.propertiesUtil = propertiesUtil;
@@ -51,15 +50,14 @@ public class ConsumerPetitionService {
 
     public void consumerProcessAgencyChatbot() {
         try {
-            this.getToken();
-            this.processConsumerSendWithoutResponse();
+            //this.getToken();
+            //this.processConsumerSendWithoutResponse();
         } catch (Exception e) {
             log.error("Error process getApi token", e.getMessage());
         }
     }
 
-    private String getToken() throws Exception {
-        if (this.token == null) {
+    private String getToken() throws Exception {if (this.token == null) {
             generateToken();
         } else {
             long tokenMillis = tokenDate.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
@@ -100,19 +98,20 @@ public class ConsumerPetitionService {
         try {
             detalleRepository.getAllDetailsWithoutResponse()
                     .get().stream().forEach(detail -> {
-                        CompletableFuture<HttpStatus> completableFuture = sendHttpRequestInformacion(builderUtils.mapPrepareParameters(detail, detail.getIdTipoSolicitud()));
+                        CompletableFuture<HttpStatus> completableFuture = sendHttpRequestInformacion(
+                                builderUtils.mapPrepareParameters(detail, detail.getIdTipoSolicitud()));
                         HttpStatus response = completableFuture.join();
 
                         if (response.is2xxSuccessful()) {
                             detail.setEstado("e");
                             detail.setFechaRespuesta(new Date());
                             detail.setRespuestaPeticion(response.toString());
-                            detalleRepository.save(detail);
                         } else {
+                            detail.setFechaRespuesta(new Date());
+                            detail.setRespuestaPeticion(response.toString());
                             log.info(ErrorNum.NO_SEND_DATA.getDescription().toString());
                         }
-
-
+                      detalleRepository.save(detail);
             });
 
         } catch (Exception e) {
@@ -123,25 +122,24 @@ public class ConsumerPetitionService {
 
     @Async("asyncExecutor")
     private CompletableFuture<HttpStatus> sendHttpRequestInformacion(Parameters parameters) {
-        ResponseEntity<ResponseHsmDTO> result = null;
         try {
+            String json = "";
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.setRequestFactory(new HttpComponentsClientHttpRequestFactory());
             UriComponentsBuilder uri = UriComponentsBuilder.fromHttpUrl(propertiesUtil.getApiHsmEnvio());
 
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
-            headers.add("Authorization", "Bearer" + this.getToken());
-
+            headers.add("Authorization", "Bearer" + propertiesUtil.getAccessTokenTemporal().toString());
             uri.queryParam("asincrono", "true");
-            HttpEntity<Parameters> entity = new HttpEntity<Parameters>(parameters, headers);
-            result = restTemplate.exchange(uri.toUriString(), HttpMethod.POST, entity, ResponseHsmDTO.class);
+            HttpEntity entity = new HttpEntity(utils.objetcMapperString(parameters), headers);
+            Object result = restTemplate.exchange(uri.toUriString(), HttpMethod.POST, entity, Object.class);
 
-            return CompletableFuture.completedFuture(result.getStatusCode());
+            return CompletableFuture.completedFuture(HttpStatus.OK);
         } catch (Exception e) {
             log.error("Error process sendHttpRequestInformacion token", e.getMessage(), e.getCause().fillInStackTrace());
         }
-        return CompletableFuture.completedFuture(result.getStatusCode());
+        return CompletableFuture.completedFuture(HttpStatus.BAD_REQUEST);
     }
 
 

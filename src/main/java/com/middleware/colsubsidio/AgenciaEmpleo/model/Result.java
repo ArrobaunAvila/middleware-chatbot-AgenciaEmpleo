@@ -13,10 +13,15 @@ import lombok.ToString;
 @ToString
 public class Result {
 
-    @JsonProperty("codigo")
-    private String code;
+    @JsonProperty("code")
+    private int code;
 
-    @JsonProperty("descripcion")
+    @JsonProperty("status")
+    private String code_status;
+
+    @JsonProperty("description")
     private String description;
+
+
 
 }

@@ -8,6 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Getter
 @Table(name = "registro_curso")
 public class RegistroCurso {
 
@@ -21,7 +22,11 @@ public class RegistroCurso {
     @Column(name = "nombre_Cesante")
     private String nombreCesante;
 
+    @Column(name = "celular_Cesante")
+    private String celular;
+
     private String curso;
+
 
     @OneToOne()
     @JoinColumn(name = "id_Detalle")

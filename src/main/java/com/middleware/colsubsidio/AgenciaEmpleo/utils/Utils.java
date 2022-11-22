@@ -3,6 +3,12 @@ package com.middleware.colsubsidio.AgenciaEmpleo.utils;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Base64Utils;
@@ -43,6 +49,14 @@ public class Utils {
             }
         }
         return validated;
+    }
+
+    public String objetcMapperString(Object value) throws JsonProcessingException {
+        ObjectMapper obj = new ObjectMapper();
+        obj.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, true);
+        obj.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
+        String json = new ObjectMapper().writeValueAsString(value);
+        return json;
     }
 
 }

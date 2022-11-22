@@ -15,8 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.print.attribute.standard.Destination;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -28,17 +28,16 @@ public class BuilderUtils {
     Utils utils;
 
     @Autowired
-    Parameters parameters;
-
-    @Autowired
     PropertiesUtil propertiesUtil;
 
+    @Autowired
+    HandleDate handleDate;
 
     public InformacionVacante registerBuilderInformacionVacante(InformacionHojaDeVidaRequest informacionHojaDeVidaRequest, DetalleSolicitud detalleSolicitud) {
 
         return InformacionVacante.builder().idCesante(informacionHojaDeVidaRequest.getInfoCesante().getCesanteId())
                 .nombreCesante(informacionHojaDeVidaRequest.getInfoCesante().getNombre())
-                .celularCesante(informacionHojaDeVidaRequest.getInfoCesante().getCelular())
+                .celularCesante("57"+informacionHojaDeVidaRequest.getInfoCesante().getCelular())
                 .nombreVacante(informacionHojaDeVidaRequest.getInfoVacante().getNombreVacante())
                 .empresaVacante(informacionHojaDeVidaRequest.getInfoVacante().getEmpresaVacante())
                 .detalleSolicitud(detalleSolicitud).build();
@@ -56,53 +55,115 @@ public class BuilderUtils {
         return RegistroCurso.builder()
                 .curso(registroCursoRequest.getCurso().getNombre())
                 .nombreCesante(registroCursoRequest.getInfoCesante().getNombre())
+                .celular("57"+registroCursoRequest.getInfoCesante().getCelular())
                 .idCesante(registroCursoRequest.getInfoCesante().getCesanteId())
                 .detalleSolicitud(detalleSolicitud).build();
     }
 
     public AgendamientoCita registerBuilderAgendamientoCita(AgendaCitaRequest agendaCitaRequest, DetalleSolicitud detalleSolicitud
-    ){
-        HandleDate  handleDate = new HandleDate();
-      return AgendamientoCita.builder().idCesante(agendaCitaRequest.getInfoCesante().getCesanteId())
-              .nombreCesante(agendaCitaRequest.getInfoCesante().getNombre())
-              .celularCesante(agendaCitaRequest.getInfoCesante().getCelular())
-              .nombreAgencia(agendaCitaRequest.getInfoAgenda().getAgencia().getNombre())
-              .direccionAgencia(agendaCitaRequest.getInfoAgenda().getAgencia().getDireccion())
-              .fecha(handleDate.retornFechaString(agendaCitaRequest.getInfoAgenda().getFecha().getDia(),
-                      agendaCitaRequest.getInfoAgenda().getFecha().getMes(),agendaCitaRequest.getInfoAgenda().getFecha().getHora()))
-              .detalleSolicitud(detalleSolicitud).build();
+    ) {
+        return AgendamientoCita.builder().idCesante(agendaCitaRequest.getInfoCesante().getCesanteId())
+                .nombreCesante(agendaCitaRequest.getInfoCesante().getNombre())
+                .celularCesante("57"+agendaCitaRequest.getInfoCesante().getCelular())
+                .nombreAgencia(agendaCitaRequest.getInfoAgenda().getAgencia().getNombre())
+                .direccionAgencia(agendaCitaRequest.getInfoAgenda().getAgencia().getDireccion())
+                .fecha(handleDate.retornFechaString(agendaCitaRequest.getInfoAgenda().getFecha().getDia(),
+                        agendaCitaRequest.getInfoAgenda().getFecha().getMes(), agendaCitaRequest.getInfoAgenda().getFecha().getHora()))
+                .detalleSolicitud(detalleSolicitud).build();
     }
 
-    public InformacionVacante registerBuilderVacanteCompleta(InformacionVacanteRequest informacionVacanteRequest, DetalleSolicitud detalleSolicitud){
-      return InformacionVacante.builder().idCesante(informacionVacanteRequest.getInfoCesante().getCesanteId())
-              .nombreCesante(informacionVacanteRequest.getInfoCesante().getNombre())
-              .celularCesante(informacionVacanteRequest.getInfoCesante().getCelular())
-              .vacanteId(informacionVacanteRequest.getInfoVacante().getVacanteId())
-              .nombreVacante(informacionVacanteRequest.getInfoVacante().getNombreVacante())
-              .empresaVacante(informacionVacanteRequest.getInfoVacante().getEmpresaVacante())
-              .salarioVacante(informacionVacanteRequest.getInfoVacante().getSalarioVacante())
-              .horarioVacante(informacionVacanteRequest.getInfoVacante().getHorarioVacante())
-              .ubicacionVacante(informacionVacanteRequest.getInfoVacante().getUbicacionVacante())
-              .detalleSolicitud(detalleSolicitud)
-              .build();
+    public InformacionVacante registerBuilderVacanteCompleta(InformacionVacanteRequest informacionVacanteRequest, DetalleSolicitud detalleSolicitud) {
+        return InformacionVacante.builder().idCesante(informacionVacanteRequest.getInfoCesante().getCesanteId())
+                .nombreCesante(informacionVacanteRequest.getInfoCesante().getNombre())
+                .celularCesante("57"+informacionVacanteRequest.getInfoCesante().getCelular())
+                .vacanteId(informacionVacanteRequest.getInfoVacante().getVacanteId())
+                .nombreVacante(informacionVacanteRequest.getInfoVacante().getNombreVacante())
+                .empresaVacante(informacionVacanteRequest.getInfoVacante().getEmpresaVacante())
+                .salarioVacante(informacionVacanteRequest.getInfoVacante().getSalarioVacante())
+                .horarioVacante(informacionVacanteRequest.getInfoVacante().getHorarioVacante())
+                .ubicacionVacante(informacionVacanteRequest.getInfoVacante().getUbicacionVacante())
+                .detalleSolicitud(detalleSolicitud)
+                .build();
+
+
     }
 
     public Parameters mapPrepareParameters(DetalleSolicitud detalleSolicitud, int template) {
-        if(template == 4){
-            List<String> list = new ArrayList<>();
-            list.add("XXXX-XXXXX-XXXX-1234");
-            list.add("*"+detalleSolicitud.getInformacionVacante().getNombreVacante().toUpperCase()+"*");
-            list.add("*"+detalleSolicitud.getInformacionVacante().getEmpresaVacante().toUpperCase()+"*");
-            list.add(detalleSolicitud.getInformacionVacante().getNombreVacante());
 
-            List<Hsm.Destination> list2 = new ArrayList<>();
-            list2.add(Hsm.Destination.builder().destination(detalleSolicitud.getInformacionVacante().getCelularCesante()).build());
+        Parameters parameters = new Parameters();
+        List<String> listParameters = new ArrayList<>(0);
+        List<Hsm.Destination> listDestionation = new ArrayList<>(0);
 
-            parameters.setParameters(list);
+        try {
+            parameters.setDid(propertiesUtil.getParameterTemplateDid());
+            parameters.setType(propertiesUtil.getParameterTemplateType());
+            parameters.setChannel(propertiesUtil.getParameterTemlateChannel());
+            parameters.setNamespace(propertiesUtil.getParameterTemplateNameSpace());
+            parameters.setLanguageCod(propertiesUtil.getParameterTemplateLanguagecode());
+            parameters.setBotAttention(propertiesUtil.isParameterTemplateBotAttention());
             parameters.setAttends(Attends.builder().waitTime(5).build());
-            parameters.setTemplate(propertiesUtil.getTemplateInformacionSeleccion().toString());
-            parameters.setHsm(Hsm.builder().destinations(list2).build());
+
+            if (template == 4) {
+                //Parameters Informacion hoja de vida PreSeleccionada
+                listParameters = Arrays.asList(detalleSolicitud.getInformacionVacante().getNombreVacante(),
+                        detalleSolicitud.getInformacionVacante().getNombreCesante(),
+                        detalleSolicitud.getInformacionVacante().getEmpresaVacante());
+
+                listDestionation.add(Hsm.Destination.builder()
+                        .destination(detalleSolicitud.getInformacionVacante()
+                                .getCelularCesante()).build());
+
+                parameters.setId(detalleSolicitud.getId().toString());
+                parameters.setHsm(Hsm.builder().destinations(listDestionation).build());
+                parameters.setTemplate(propertiesUtil.getTemplateInformacionSeleccion());
+                parameters.setParameters(listParameters);
+            } else if(template == 3 ){
+              //Parameters Informacion Registro curso
+                listParameters = Arrays.asList(detalleSolicitud.getRegistroCurso().getCurso());
+
+                listDestionation.add(Hsm.Destination.builder()
+                        .destination(detalleSolicitud.getRegistroCurso().getCelular().toString()).build());
+
+                parameters.setId(detalleSolicitud.getId().toString());
+                parameters.setHsm(Hsm.builder().destinations(listDestionation).build());
+                parameters.setTemplate(propertiesUtil.getTemplateRegisterCurso());
+                parameters.setParameters(listParameters);
+            } else if(template == 2){
+                //Parameters Informacion Agendamiento cita
+
+                listParameters = Arrays.asList(detalleSolicitud.getAgendamientoCita().getFecha(),
+                        detalleSolicitud.getAgendamientoCita().getNombreAgencia(),
+                        detalleSolicitud.getAgendamientoCita().getDireccionAgencia());
+
+                listDestionation.add(Hsm.Destination.builder()
+                        .destination(detalleSolicitud.getAgendamientoCita().getCelularCesante()).build());
+
+                parameters.setId(detalleSolicitud.getId().toString());
+                parameters.setHsm(Hsm.builder().destinations(listDestionation).build());
+                parameters.setTemplate(propertiesUtil.getTemplatAgendamientoCita());
+                parameters.setParameters(listParameters);
+
+            }else if(template == 1){
+
+                listParameters = Arrays.asList(detalleSolicitud.getInformacionVacante().getNombreVacante(),
+                        detalleSolicitud.getInformacionVacante().getEmpresaVacante(),
+                        detalleSolicitud.getInformacionVacante().getSalarioVacante(),
+                        detalleSolicitud.getInformacionVacante().getHorarioVacante(),
+                        detalleSolicitud.getInformacionVacante().getUbicacionVacante());
+
+                listDestionation.add(Hsm.Destination.builder()
+                        .destination(detalleSolicitud.getInformacionVacante().getCelularCesante()).build());
+
+                parameters.setId(detalleSolicitud.getId().toString());
+                parameters.setHsm(Hsm.builder().destinations(listDestionation).build());
+                parameters.setTemplate(propertiesUtil.getTemplateInformacionVacanteInteres());
+                parameters.setParameters(listParameters);
+            }
+
+        } catch (Exception e) {
+            log.error("Error builder Parameters" + e.getMessage());
         }
-      return parameters;
+
+        return parameters;
     }
 }

@@ -4,14 +4,19 @@ import com.middleware.colsubsidio.AgenciaEmpleo.dto.*;
 import com.middleware.colsubsidio.AgenciaEmpleo.enums.ErrorNum;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.Result;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.RegistroCurso;
+import com.middleware.colsubsidio.AgenciaEmpleo.services.LogService;
 import com.middleware.colsubsidio.AgenciaEmpleo.services.PublicarService;
 import com.middleware.colsubsidio.AgenciaEmpleo.utils.BuilderUtils;
+import com.middleware.colsubsidio.AgenciaEmpleo.utils.HandleDate;
 import com.middleware.colsubsidio.AgenciaEmpleo.utils.Utils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.LinkedList;
 import java.util.Objects;
 
 @Component
@@ -22,14 +27,20 @@ public class ControllerBusiness {
     PublicarService publicarService;
 
     @Autowired
+    LogService logService;
+
+    @Autowired
     BuilderUtils builderUtils;
 
     @Autowired
     Utils utils;
 
+    @Autowired
+    HandleDate handleDate;
+
     private ResponseDTO responseDTO = null;
 
-    public ResponseDTO procesoHojaDeVidaSeleccionada(InformacionHojaDeVidaRequest informacionVacanteRequest) {
+    public ResponseDTO procesoHojaDeVidaSeleccionada(InformacionHojaDeVidaRequest informacionVacanteRequest){
         try {
             if (Objects.isNull(informacionVacanteRequest.getInfoVacante()) || Objects.isNull(informacionVacanteRequest.getInfoCesante())
                     || !utils.validateCriterios(informacionVacanteRequest.getInfoCesante().getCesanteId())
@@ -38,14 +49,23 @@ public class ControllerBusiness {
                     || !utils.validateCriterios(informacionVacanteRequest.getInfoVacante().getEmpresaVacante())
                     || !utils.validateCriterios(informacionVacanteRequest.getInfoVacante().getNombreVacante())) {
 
-                this.responseDTO = ResponseDTO.builder().result(Result.builder().code("400").description((ErrorNum.NO_ENTRY_DATA.getDescription())).build()).build();
+                this.responseDTO = ResponseDTO.builder()
+                        .result(Result.builder()
+                                .code(HttpStatus.BAD_REQUEST.value())
+                                .code_status(HttpStatus.BAD_REQUEST.getReasonPhrase())
+                                .description((ErrorNum.NO_ENTRY_DATA.getDescription()))
+                                .build()).build();
             } else {
 
                 try {
                     publicarService.guardarInformacion(builderUtils.registerBuilderInformacionVacante(informacionVacanteRequest,
                             publicarService.guardarDetalleSolicitud(builderUtils.registerBuilderDetalle(4))));
 
-                    this.responseDTO = ResponseDTO.builder().result(Result.builder().code(String.valueOf(HttpStatus.OK.value())).description("Exito! proceso realizado").build()).build();
+                    this.responseDTO = ResponseDTO.builder()
+                            .result(Result.builder().code(HttpStatus.OK.value())
+                                    .code_status(HttpStatus.OK.getReasonPhrase())
+                                    .description("Exito! proceso realizado")
+                                    .build()).build();
 
                 } catch (Exception e) {
                     log.error("Error! Excepcion insertando solicitud Informacion Vacante a curso--->" + ErrorNum.TECHNICAL.getDescription(), e.fillInStackTrace().getCause());
@@ -68,7 +88,8 @@ public class ControllerBusiness {
 
                 this.responseDTO = ResponseDTO.builder()
                         .result(Result.builder()
-                                .code("400")
+                                .code(HttpStatus.BAD_REQUEST.value())
+                                .code_status(HttpStatus.BAD_REQUEST.getReasonPhrase())
                                 .description((ErrorNum.NO_ENTRY_DATA.getDescription()))
                                 .build()).build();
 
@@ -81,7 +102,11 @@ public class ControllerBusiness {
                                 publicarService.guardarDetalleSolicitud(builderUtils.registerBuilderDetalle(3))));
 
                 if (Objects.nonNull(info)) {
-                    this.responseDTO = ResponseDTO.builder().result(Result.builder().code(String.valueOf(HttpStatus.OK.value())).description("Exito! proceso realizado").build()).build();
+                     this.responseDTO = ResponseDTO.builder()
+                            .result(Result.builder().code(HttpStatus.OK.value())
+                                    .code_status(HttpStatus.OK.getReasonPhrase())
+                                    .description("Exito! proceso realizado")
+                                    .build()).build();
                 }
             } catch (Exception e) {
                 log.error("Error! Excepcion insertando solicitud registro a curso--->" + ErrorNum.TECHNICAL.getDescription(), e.fillInStackTrace().getCause());
@@ -105,7 +130,12 @@ public class ControllerBusiness {
                 || !utils.validateCriterios(agendaCitaRequest.getInfoAgenda().getAgencia().getNombre())
                 || !utils.validateCriterios(agendaCitaRequest.getInfoAgenda().getFecha().getDia())){
 
-                this.responseDTO = ResponseDTO.builder().result(Result.builder().code("400").description((ErrorNum.NO_ENTRY_DATA.getDescription())).build()).build();
+                this.responseDTO = ResponseDTO.builder()
+                        .result(Result.builder()
+                                .code(HttpStatus.BAD_REQUEST.value())
+                                .code_status(HttpStatus.BAD_REQUEST.getReasonPhrase())
+                                .description((ErrorNum.NO_ENTRY_DATA.getDescription()))
+                                .build()).build();
 
                 return this.responseDTO;
             }
@@ -114,8 +144,11 @@ public class ControllerBusiness {
                 publicarService.guardarInformacionAgendamientoCita(builderUtils.registerBuilderAgendamientoCita(agendaCitaRequest,
                         publicarService.guardarDetalleSolicitud(builderUtils.registerBuilderDetalle(2))));
 
-                this.responseDTO = ResponseDTO.builder().result(Result.builder().code(String.valueOf(HttpStatus.OK.value())).description("Exito! proceso realizado").build()).build();
-
+                     this.responseDTO = ResponseDTO.builder()
+                            .result(Result.builder().code(HttpStatus.OK.value())
+                                    .code_status(HttpStatus.OK.getReasonPhrase())
+                                    .description("Exito! proceso realizado")
+                                    .build()).build();
             }catch (Exception e){
                 log.error("Error! Excepcion insertando solicitud Agenga cita --->" + ErrorNum.TECHNICAL.getDescription(), e.fillInStackTrace().getCause());
             }
@@ -136,14 +169,25 @@ public class ControllerBusiness {
                || !utils.validateCriterios(informacionVacanteRequest.getInfoCesante().getCelular())
                || !utils.validateCriterios(informacionVacanteRequest.getInfoVacante().getNombreVacante())
                || !utils.validateCriterios(informacionVacanteRequest.getInfoVacante().getVacanteId())){
-                this.responseDTO = ResponseDTO.builder().result(Result.builder().code("400").description((ErrorNum.NO_ENTRY_DATA.getDescription())).build()).build();
+
+                this.responseDTO = ResponseDTO.builder()
+                        .result(Result.builder()
+                                .code(HttpStatus.BAD_REQUEST.value())
+                                .code_status(HttpStatus.BAD_REQUEST.getReasonPhrase())
+                                .description((ErrorNum.NO_ENTRY_DATA.getDescription()))
+                                .build()).build();
                 return this.responseDTO;
             }
 
             try {
                publicarService.guardarInformacionVacante(builderUtils.registerBuilderVacanteCompleta(informacionVacanteRequest,
                        publicarService.guardarDetalleSolicitud(builderUtils.registerBuilderDetalle(1))));
-               this.responseDTO = ResponseDTO.builder().result(Result.builder().code(String.valueOf(HttpStatus.OK.value())).description("Exito! proceso realizado").build()).build();
+
+                this.responseDTO = ResponseDTO.builder()
+                            .result(Result.builder().code(HttpStatus.OK.value())
+                                    .code_status(HttpStatus.OK.getReasonPhrase())
+                                    .description("Exito! proceso realizado")
+                                    .build()).build();
 
             }catch (Exception e){
              log.error("Error! Excepcion insertando Informacion Vacante Gestion  --->" + ErrorNum.TECHNICAL.getDescription(), e.fillInStackTrace().getCause());

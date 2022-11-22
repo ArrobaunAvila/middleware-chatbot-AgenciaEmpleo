@@ -1,41 +1,31 @@
 package com.middleware.colsubsidio.AgenciaEmpleo.model;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Configuration
 @Builder
-@Component
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @Getter
 @Setter
-@ToString
 public class Parameters {
 
-    @Value("${parameters.id}")
     private String id;
 
-    @Value("${parameters.did}")
     private String did;
 
-    @Value("${parameters.type}")
     private String type;
 
-    @Value("${parameters.channel}")
     private String channel;
 
-    @Value("${parameters.languagecode}")
     private String languageCod;
 
-    @Value("${parameters.botAttention}")
-    private String botAttention;
+    private boolean botAttention;
 
-    @Value("$parameters.namespace")
     private String namespace;
 
     private String template;

@@ -1,12 +1,20 @@
 package com.middleware.colsubsidio.AgenciaEmpleo.utils;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
-
+@Component
 public class HandleDate {
 
+    @Autowired
+    PropertiesUtil propertiesUtil;
     private static TimeZone timeZone = TimeZone.getTimeZone("America/Bogota");
 
     public static Date retornDateNow() {
@@ -64,12 +72,22 @@ public class HandleDate {
         return date;
     }
 
+    public Long getMillisecondsFromStartDate(Date startdate) {
+		LocalDateTime startDateCast = startdate.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+		return startDateCast.until(LocalDateTime.now(), ChronoUnit.MILLIS);
+	}
+
    public  String retornFechaString(String dia, String mes, String hora){
         String date = null;
         Calendar calendar = Calendar.getInstance();
          try {
-              date = dia+"/"+mes+"/"+String.valueOf(calendar.get(Calendar.YEAR))+"Hora: "+hora;
+              date = "el día " + dia + " del "+mes+" a las"+hora;
          }catch (Exception e){}
          return date;
    }
+
+   public String dateToString(Date fecha){
+            SimpleDateFormat frm= new SimpleDateFormat(propertiesUtil.getValidaFormatoFechaApp());
+            return frm.format(fecha);
+        }
 }
