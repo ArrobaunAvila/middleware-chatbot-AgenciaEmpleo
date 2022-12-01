@@ -25,6 +25,7 @@ public class AgendamientoCita{
     @Column(name= "celular_Cesante")
     private String celularCesante;
 
+    @Column(name = "fecha_Agenda")
     private String fecha;
 
     @Column(name = "nombre_Agencia")

@@ -22,18 +22,7 @@ public class Parameters {
 
     private String channel;
 
-    private String languageCod;
-
-    private boolean botAttention;
-
-    private String namespace;
-
-    private String template;
-
-    private List<String> parameters;
-
     private Hsm hsm;
 
-    private Attends attends;
 
 }

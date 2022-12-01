@@ -9,11 +9,13 @@ import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Base64Utils;
 
 @Component
+@Slf4j
 public class Utils {
 
         @Autowired
@@ -56,6 +58,7 @@ public class Utils {
         obj.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, true);
         obj.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
         String json = new ObjectMapper().writeValueAsString(value);
+        log.info("Traza objetcMapperString() --> Json de envio" + json);
         return json;
     }
 

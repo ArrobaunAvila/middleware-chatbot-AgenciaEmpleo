@@ -13,19 +13,13 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @SpringBootApplication
-@EnableAutoConfiguration
 @EnableFeignClients
 @EnableScheduling
 @CrossOrigin(origins = "*")
-public class MiddlewareChatbotAgenciaEmpleoApplication implements CommandLineRunner {
+public class MiddlewareChatbotAgenciaEmpleoApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(MiddlewareChatbotAgenciaEmpleoApplication.class, args);
 
-    }
-
-
-       @Override
-    public void run(String... args) throws Exception {
     }
 }

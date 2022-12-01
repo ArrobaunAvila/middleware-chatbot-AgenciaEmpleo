@@ -50,8 +50,9 @@ public class BuilderUtils {
     public DetalleSolicitud registerBuilderDetalle(int tipoSolicitud) {
         return DetalleSolicitud.builder()
                 .fecha(new Date())
+                .estado(0)
                 .idTipoSolicitud(tipoSolicitud)
-                .estado("p").build();
+                .build();
     }
 
     public RegistroCurso registerCursoBuilder(InformacionCursoRequest registroCursoRequest, DetalleSolicitud detalleSolicitud) {
@@ -93,43 +94,48 @@ public class BuilderUtils {
     public Parameters mapPrepareParameters(DetalleSolicitud detalleSolicitud, int template) {
 
         Parameters parameters = new Parameters();
+        Hsm hsm = new Hsm();
         List<String> listParameters = new ArrayList<>(0);
-        List<Hsm.Destination> listDestionation = new ArrayList<>(0);
+        List<Hsm.Destination> listDestination = new ArrayList<>(0);
 
         try {
+            parameters.setId(detalleSolicitud.getId().toString());
             parameters.setDid(propertiesUtil.getParameterTemplateDid());
             parameters.setType(propertiesUtil.getParameterTemplateType());
             parameters.setChannel(propertiesUtil.getParameterTemplateChannel());
-            parameters.setNamespace(propertiesUtil.getParameterTemplateNameSpace());
-            parameters.setLanguageCod(propertiesUtil.getParameterTemplateLanguagecode());
-            parameters.setBotAttention(propertiesUtil.isParameterTemplateBotAttention());
-            parameters.setAttends(Attends.builder().waitTime(5).build());
+
+            hsm.setNamespace(propertiesUtil.getParameterTemplateNameSpace());
+            hsm.setAttends(Attends.builder().waitTime(5).build());
+            hsm.setLanguageCode(propertiesUtil.getParameterTemplateLanguagecode());
+            hsm.setBotAttention(propertiesUtil.isParameterTemplateBotAttention());
 
             if (template == 4) {
                 //Parameters Informacion hoja de vida PreSeleccionada
                 listParameters = Arrays.asList(detalleSolicitud.getInformacionVacante().getNombreVacante(),
                         detalleSolicitud.getInformacionVacante().getNombreCesante(),
-                        detalleSolicitud.getInformacionVacante().getEmpresaVacante());
+                        detalleSolicitud.getInformacionVacante().getEmpresaVacante(),
+                        detalleSolicitud.getInformacionVacante().getNombreVacante());
 
-                listDestionation.add(Hsm.Destination.builder()
-                        .destination(detalleSolicitud.getInformacionVacante()
-                                .getCelularCesante()).build());
-
-                parameters.setId(detalleSolicitud.getId().toString());
-                parameters.setHsm(Hsm.builder().destinations(listDestionation).build());
-                parameters.setTemplate(propertiesUtil.getTemplateInformacionSeleccion());
-                parameters.setParameters(listParameters);
+                listDestination.add(Hsm.Destination.builder().destination(detalleSolicitud.getInformacionVacante().getCelularCesante()).build());
+                hsm.setDestinations(listDestination);
+                hsm.setParameters(listParameters);
+                hsm.setTemplate(propertiesUtil.getTemplateInformacionSeleccion());
+                parameters.setHsm(hsm);
             } else if(template == 3 ){
-              //Parameters Informacion Registro curso
-                listParameters = Arrays.asList(detalleSolicitud.getRegistroCurso().getCurso());
+              //Parameters Informacion hoja de vida preselecionada2 --- mensaje 4 template
 
-                listDestionation.add(Hsm.Destination.builder()
-                        .destination(detalleSolicitud.getRegistroCurso().getCelular().toString()).build());
+                listParameters = Arrays.asList(detalleSolicitud.getInformacionVacante().getNombreCesante(),
+                        detalleSolicitud.getInformacionVacante().getEmpresaVacante(),
+                        detalleSolicitud.getInformacionVacante().getNombreVacante());
 
-                parameters.setId(detalleSolicitud.getId().toString());
-                parameters.setHsm(Hsm.builder().destinations(listDestionation).build());
-                parameters.setTemplate(propertiesUtil.getTemplateRegisterCurso());
-                parameters.setParameters(listParameters);
+                listDestination.add(Hsm.Destination.builder()
+                        .destination(detalleSolicitud.getInformacionVacante().getCelularCesante().toString()).build());
+
+                listDestination.add(Hsm.Destination.builder().destination(detalleSolicitud.getInformacionVacante().getCelularCesante()).build());
+                hsm.setDestinations(listDestination);
+                hsm.setParameters(listParameters);
+                hsm.setTemplate(propertiesUtil.getTemplateInformacionPreseleccion4());
+                parameters.setHsm(hsm);
             } else if(template == 2) {
                 //Parameters Informacion Agendamiento cita
                 gsonUtils = new GsonUtils();
@@ -137,34 +143,31 @@ public class BuilderUtils {
                        gsonUtils.toObject(detalleSolicitud.getAgendamientoCita().getFecha(), InformacionAgenda.Fecha.class);
 
                 listParameters = Arrays.asList(obj.getDia(),
+                        handleDate.getMonthInPhraseFromInt(Integer.valueOf(obj.getMes())),
                         obj.getHora(),
-                        obj.getMes(),
                         detalleSolicitud.getAgendamientoCita().getNombreAgencia(),
                         detalleSolicitud.getAgendamientoCita().getDireccionAgencia());
 
-                listDestionation.add(Hsm.Destination.builder()
-                        .destination(detalleSolicitud.getAgendamientoCita().getCelularCesante()).build());
-
-                parameters.setId(detalleSolicitud.getId().toString());
-                parameters.setHsm(Hsm.builder().destinations(listDestionation).build());
-                parameters.setTemplate(propertiesUtil.getTemplatAgendamientoCita());
-                parameters.setParameters(listParameters);
+               listDestination.add(Hsm.Destination.builder().destination(detalleSolicitud.getAgendamientoCita().getCelularCesante()).build());
+                hsm.setDestinations(listDestination);
+                hsm.setParameters(listParameters);
+                hsm.setTemplate(propertiesUtil.getTemplatAgendamientoCita());
+                parameters.setHsm(hsm);
 
             }else if(template == 1){
 
-                listParameters = Arrays.asList(detalleSolicitud.getInformacionVacante().getNombreVacante(),
-                        detalleSolicitud.getInformacionVacante().getEmpresaVacante(),
+                listParameters = Arrays.asList(detalleSolicitud.getInformacionVacante().getNombreCesante(),
+                        "*"+detalleSolicitud.getInformacionVacante().getNombreVacante().concat("*"),
+                        "*"+detalleSolicitud.getInformacionVacante().getEmpresaVacante().concat("*"),
                         detalleSolicitud.getInformacionVacante().getSalarioVacante(),
                         detalleSolicitud.getInformacionVacante().getHorarioVacante(),
                         detalleSolicitud.getInformacionVacante().getUbicacionVacante());
 
-                listDestionation.add(Hsm.Destination.builder()
-                        .destination(detalleSolicitud.getInformacionVacante().getCelularCesante()).build());
-
-                parameters.setId(detalleSolicitud.getId().toString());
-                parameters.setHsm(Hsm.builder().destinations(listDestionation).build());
-                parameters.setTemplate(propertiesUtil.getTemplateInformacionVacanteInteres());
-                parameters.setParameters(listParameters);
+               listDestination.add(Hsm.Destination.builder().destination(detalleSolicitud.getInformacionVacante().getCelularCesante()).build());
+                hsm.setDestinations(listDestination);
+                hsm.setParameters(listParameters);
+                hsm.setTemplate(propertiesUtil.getTemplateInformacionVacanteInteres());
+                parameters.setHsm(hsm);
             }
 
         } catch (Exception e) {

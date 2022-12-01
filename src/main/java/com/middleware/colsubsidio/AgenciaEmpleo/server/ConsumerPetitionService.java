@@ -50,7 +50,9 @@ public class ConsumerPetitionService {
 
     public void consumerProcessAgencyChatbot() {
         try {
-            //this.getToken();
+            log.info("Comenzando traza -->" + ConsumerPetitionService.class.getName() + "Cron envios flujos");
+
+            this.getToken();
             this.processConsumerSendWithoutResponse();
         } catch (Exception e) {
             log.error("Error process getApi token", e.getMessage());
@@ -65,6 +67,7 @@ public class ConsumerPetitionService {
             long timeLive = currMillis - tokenMillis;
             if (timeLive > propertiesUtil.getMaxConsumerInMillisRequest()) {
                 generateToken();
+                log.info("Traza generateToken() ---> se genera token para peticion");
             }
         }
         return token;
@@ -101,11 +104,11 @@ public class ConsumerPetitionService {
                         CompletableFuture<ResponseEntity> completableFuture = sendHttpRequestInformacion(
                                 builderUtils.mapPrepareParameters(detail, detail.getIdTipoSolicitud()));
                         ResponseEntity response = completableFuture.join();
-
                         if (response.getStatusCode().is2xxSuccessful()) {
-                            detail.setEstado("e");
+                            detail.setEstado(1);
                             detail.setFechaRespuesta(new Date());
                             detail.setRespuestaPeticion(response.toString());
+                            log.info("Se Envio data" + response.toString() + "Detalle -->" + detail.getId() );
                         } else {
                             detail.setFechaRespuesta(new Date());
                             detail.setRespuestaPeticion(response.toString());
@@ -122,9 +125,8 @@ public class ConsumerPetitionService {
 
     @Async("asyncExecutor")
     private CompletableFuture<ResponseEntity> sendHttpRequestInformacion(Parameters parameters) {
-        ResponseEntity result = null;
+        ResponseEntity result = new ResponseEntity(HttpStatus.BAD_REQUEST);
         try {
-            String json = "";
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.setRequestFactory(new HttpComponentsClientHttpRequestFactory());
             UriComponentsBuilder uri = UriComponentsBuilder.fromHttpUrl(propertiesUtil.getApiHsmEnvio());
@@ -135,10 +137,9 @@ public class ConsumerPetitionService {
             uri.queryParam("asincrono", "true");
             HttpEntity entity = new HttpEntity(utils.objetcMapperString(parameters), headers);
             result = restTemplate.exchange(uri.toUriString(), HttpMethod.POST, entity, Object.class);
-
             return CompletableFuture.completedFuture(result);
         } catch (Exception e) {
-            log.error("Error process sendHttpRequestInformacion token", e.getMessage(), e.getCause().fillInStackTrace());
+            log.error("Error process sendHttpRequestInformacion", e.getMessage(), e.getCause().fillInStackTrace());
         }
         return CompletableFuture.completedFuture(result);
     }

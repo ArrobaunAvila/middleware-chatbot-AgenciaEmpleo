@@ -21,10 +21,11 @@ public class DetalleSolicitud {
     private Integer idTipoSolicitud;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = true)
+    @Column(name = "fecha_registro",nullable = true)
     private Date fecha;
 
-    private String estado;
+    @Column(name = "estado_peticion")
+    private Integer estado;
 
     @Column(name = "respuesta_peticion", nullable = true)
     private String respuestaPeticion;

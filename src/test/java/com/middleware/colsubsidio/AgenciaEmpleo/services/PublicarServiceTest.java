@@ -40,7 +40,7 @@ class PublicarServiceTest {
     void setUp() {
         MockitoAnnotations.openMocks(this);
         detalleSolicitud = Mockito.mock(DetalleSolicitud.class);
-        detalleSolicitud.setEstado("p");
+        detalleSolicitud.setEstado(0);
         detalleSolicitud.setIdTipoSolicitud(4);
         detalleSolicitud.setFecha(new Date());
 

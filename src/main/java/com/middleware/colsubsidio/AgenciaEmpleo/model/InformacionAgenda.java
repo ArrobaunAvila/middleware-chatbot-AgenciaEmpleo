@@ -1,6 +1,7 @@
 package com.middleware.colsubsidio.AgenciaEmpleo.model;
 
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
 @Builder
@@ -9,7 +10,10 @@ import lombok.*;
 @Getter
 public class InformacionAgenda {
 
+    @ApiModelProperty(hidden = false)
   private Fecha fecha;
+
+    @ApiModelProperty(hidden = false)
   private Agencia agencia;
      @Builder
      @NoArgsConstructor

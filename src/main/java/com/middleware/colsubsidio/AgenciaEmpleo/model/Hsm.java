@@ -14,7 +14,19 @@ import java.util.List;
 @Setter
 public class Hsm {
 
+    private String languageCode;
+
+    private boolean botAttention;
+
+    private String namespace;
+
+    private String template;
+
+    private List<String> parameters;
+
     private List<Destination> destinations;
+
+    private Attends attends;
 
     @Builder
     @NoArgsConstructor

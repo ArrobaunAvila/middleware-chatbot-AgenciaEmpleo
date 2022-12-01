@@ -59,7 +59,7 @@ public class ControllerBusiness {
                      middlewareRequest.setFechaHoraOperacion(handleDate.dateToString(new Date()));
                      middlewareRequest.setMessageText("Comenzando traza service processesVacancyInformation--->");
 
-            MiddlewareRequest.Service service =  logService.initLogService(proper.getProcess_cv_preselection(),"processCvPreselection",
+            MiddlewareRequest.Service service =  logService.initLogService(proper.getKibana_process_cv_preselection(),"processCvPreselection",
                      informacionVacanteRequest, true);
             list.add(service);
             middlewareRequest.setServices(list);
@@ -97,7 +97,7 @@ public class ControllerBusiness {
                     logService.completeResponseService(service , false, "" , true, e.getMessage());
                     log.error("Error! Excepcion insertando solicitud Informacion Vacante a curso--->" + ErrorNum.TECHNICAL.getDescription(), e.fillInStackTrace().getCause());
                 }
-                logService.sendLogToKibana(middlewareRequest, true, proper.getProcess_cv_preselection());
+                //logService.sendLogToKibana(middlewareRequest, true, proper.getKibana_process_cv_preselection());
             }
         } catch (Exception e) {
             log.error("Excepcion al realizar procesoHojaDeVidaSeleccionada  -> " + ErrorNum.TECHNICAL.getDescription(), e.fillInStackTrace().getCause());
@@ -231,5 +231,54 @@ public class ControllerBusiness {
         }
 
         return responseDTO;
+    }
+
+    public ResponseDTO procesoPreselection(InformacionHojaDeVidaRequest informacionHojaDeVidaRequest){
+      try {
+             List<MiddlewareRequest.Service> list = new ArrayList<>(0);
+
+             MiddlewareRequest middlewareRequest = new MiddlewareRequest();
+                     middlewareRequest.setStartdate(new Date());
+                     middlewareRequest.setFechaHoraOperacion(handleDate.dateToString(new Date()));
+                     middlewareRequest.setMessageText("Comenzando traza service procesoPreselection--->");
+
+            MiddlewareRequest.Service service =  logService.initLogService(proper.getKibana_preseleccion_mensaje4(),"procesoPreselection",
+                     informacionHojaDeVidaRequest, true);
+            list.add(service);
+            middlewareRequest.setServices(list);
+            if (Objects.isNull(informacionHojaDeVidaRequest.getInfoVacante()) || Objects.isNull(informacionHojaDeVidaRequest.getInfoCesante())
+                    || !utils.validateCriterios(informacionHojaDeVidaRequest.getInfoCesante().getCesanteId())
+                    || !utils.validateCriterios(informacionHojaDeVidaRequest.getInfoCesante().getCelular())
+                    || !utils.validateCriterios(informacionHojaDeVidaRequest.getInfoCesante().getNombre())
+                    || !utils.validateCriterios(informacionHojaDeVidaRequest.getInfoVacante().getEmpresaVacante())
+                    || !utils.validateCriterios(informacionHojaDeVidaRequest.getInfoVacante().getNombreVacante())) {
+
+                logService.completeResponseService(service,
+                        false,  "", true, "Error! Datos entry invalidos!");
+                this.responseDTO = ResponseDTO.builder()
+                        .result(Result.builder()
+                                .code(HttpStatus.BAD_REQUEST.value())
+                                .code_status(HttpStatus.BAD_REQUEST.getReasonPhrase())
+                                .description((ErrorNum.NO_ENTRY_DATA.getDescription()))
+                                .build()).build();
+            } else {
+
+                try {
+
+                 InformacionVacante info =  publicarService.guardarInformacion(builderUtils.registerBuilderInformacionVacante(informacionHojaDeVidaRequest,
+                            publicarService.guardarDetalleSolicitud(builderUtils.registerBuilderDetalle(3))));
+
+                    logService.completeResponseService(service , true, info , true, "Ok! Registros Insertados correctamente");
+
+                } catch (Exception e) {
+                    logService.completeResponseService(service , false, "" , true, e.getMessage());
+                    log.error("Error! Excepcion insertando solicitud preseleccion --->" + ErrorNum.TECHNICAL.getDescription(), e.fillInStackTrace().getCause());
+                }
+                //logService.sendLogToKibana(middlewareRequest, true, proper.getTemplateInformacionPreseleccion4());
+            }
+        } catch (Exception e) {
+            log.error("Excepcion al realizar proceso preseleccion template mensaje 4  -> " + ErrorNum.TECHNICAL.getDescription(), e.fillInStackTrace().getCause());
+        }
+        return this.responseDTO;
     }
 }

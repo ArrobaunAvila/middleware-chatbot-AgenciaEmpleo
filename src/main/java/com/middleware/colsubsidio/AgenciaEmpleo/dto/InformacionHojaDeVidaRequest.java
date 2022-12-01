@@ -2,6 +2,7 @@ package com.middleware.colsubsidio.AgenciaEmpleo.dto;
 
 
 import com.middleware.colsubsidio.AgenciaEmpleo.model.InformacionCesante;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
 @Builder
@@ -12,6 +13,7 @@ import lombok.*;
 public class InformacionHojaDeVidaRequest {
 
     private InformacionCesante infoCesante;
+
     private InformacionVacanteOptional infoVacante;
 
     @Builder

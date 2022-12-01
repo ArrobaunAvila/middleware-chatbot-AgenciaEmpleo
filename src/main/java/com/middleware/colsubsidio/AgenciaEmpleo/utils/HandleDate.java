@@ -1,19 +1,16 @@
 package com.middleware.colsubsidio.AgenciaEmpleo.utils;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.middleware.colsubsidio.AgenciaEmpleo.dto.AgendaCitaRequest;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.InformacionAgenda;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
+import java.time.DateTimeException;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Objects;
-import java.util.TimeZone;
+import java.util.*;
+
 @Component
 public class HandleDate {
 
@@ -95,5 +92,18 @@ public class HandleDate {
    public String dateToString(Date fecha){
             SimpleDateFormat frm= new SimpleDateFormat(propertiesUtil.getValidaFormatoFechaApp());
             return frm.format(fecha);
-        }
+    }
+
+    public String getMonthInPhraseFromInt(int month ){
+        String month_string = null;
+        String result = null;
+        try {
+         Locale locale = new Locale("es","ES");
+         Calendar calendarInicio = Calendar.getInstance();
+         calendarInicio.set(Calendar.MONTH, month-1);
+         month_string = calendarInicio.getDisplayName(Calendar.MONTH, Calendar.LONG, locale);
+         result =  month_string.toUpperCase().charAt(0) + month_string.substring(1, month_string.length()).toLowerCase();
+        }catch (DateTimeException e){}
+        return result;
+    }
 }
