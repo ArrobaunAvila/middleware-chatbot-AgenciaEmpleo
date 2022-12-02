@@ -64,11 +64,11 @@ public class HandleDate {
         return str;
     }
 
-    public static Date retornDateToString(String d) {
+    public Date retornDateToString(String d) {
         Date date = null;
         try {
             Calendar calendar = Calendar.getInstance();
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
             calendar.setTime(sdf.parse(d));
             calendar.setTimeZone(timeZone);
             date = calendar.getTime();

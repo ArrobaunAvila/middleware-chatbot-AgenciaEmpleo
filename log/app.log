@@ -402,3 +402,21 @@
 2022-12-01 15:32:36.103 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-12-01 15:32:36.104 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
 2022-12-01 15:32:36.106 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2022-12-01 16:03:42.780 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplicationTests:55 - Starting MiddlewareChatbotAgenciaEmpleoApplicationTests using Java 1.8.0_352 on ubuntu-vivobook with PID 121250 (started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
+2022-12-01 16:03:42.782 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplicationTests:634 - No active profile set, falling back to 1 default profile: "default"
+2022-12-01 16:03:43.757 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-01 16:03:43.803 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 40 ms. Found 4 JPA repository interfaces.
+2022-12-01 16:03:44.051 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=2be48083-a29f-3557-8793-c572220ad39c
+2022-12-01 16:03:44.585 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2022-12-01 16:03:44.950 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2022-12-01 16:03:45.010 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-01 16:03:45.050 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-01 16:03:45.083 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-01 16:03:45.175 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+2022-12-01 16:03:45.676 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-01 16:03:45.683 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-01 16:03:46.413 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-01 16:03:47.885 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplicationTests:61 - Started MiddlewareChatbotAgenciaEmpleoApplicationTests in 10.81 seconds (JVM running for 11.908)
+2022-12-01 16:03:47.949 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-01 16:03:47.952 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2022-12-01 16:03:47.955 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.

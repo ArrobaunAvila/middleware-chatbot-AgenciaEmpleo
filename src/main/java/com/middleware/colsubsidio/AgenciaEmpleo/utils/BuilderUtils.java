@@ -49,7 +49,7 @@ public class BuilderUtils {
 
     public DetalleSolicitud registerBuilderDetalle(int tipoSolicitud) {
         return DetalleSolicitud.builder()
-                .fecha(new Date())
+                .fecha(handleDate.retornDateToString(new Date().toString()))
                 .estado(0)
                 .idTipoSolicitud(tipoSolicitud)
                 .build();
