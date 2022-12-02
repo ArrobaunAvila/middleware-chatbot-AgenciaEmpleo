@@ -1,5 +1,7 @@
 package com.middleware.colsubsidio.AgenciaEmpleo.utils;
 
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.cloud.openfeign.support.ResponseEntityDecoder;
@@ -8,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.client.RestTemplate;
 
@@ -20,6 +23,9 @@ import com.fasterxml.jackson.databind.util.StdDateFormat;
 import feign.codec.Decoder;
 import feign.httpclient.ApacheHttpClient;
 
+import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import org.apache.http.client.config.RequestConfig;
@@ -28,9 +34,10 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.commons.httpclient.ApacheHttpClientFactory;
 import org.springframework.cloud.openfeign.support.FeignHttpClientProperties;
-
+@EnableAsync
+@Slf4j
 @Configuration
-public class FooClientConfig {
+public class FooClientConfig implements AsyncUncaughtExceptionHandler {
 
 
        @Autowired
@@ -102,9 +109,12 @@ public class FooClientConfig {
         return executor;
     }
 
-
-    @Bean
-    public GsonUtils toJson(){
-        return new GsonUtils();
-    }
+	@Override
+	public void handleUncaughtException(Throwable ex, Method method, Object... params) {
+		   log.error("Exception message - " + ex.getMessage());
+	   log.error("Method name - "+ method.getName());
+	   Arrays.stream(params).peek(p -> {
+		   log.info("Parameter value" + p.toString());
+	   });
+	}
 }

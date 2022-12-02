@@ -96,8 +96,8 @@ public class ConsumerPetitionService {
         return result.getBody().toString();
     }
 
-    @Async
-    private void processConsumerSendWithoutResponse() {
+    @Async("asyncExecutor")
+    public void processConsumerSendWithoutResponse() {
         try {
             detalleRepository.getAllDetailsWithoutResponse()
                     .get().stream().forEach(detail -> {
@@ -124,7 +124,7 @@ public class ConsumerPetitionService {
     }
 
     @Async("asyncExecutor")
-    private CompletableFuture<ResponseEntity> sendHttpRequestInformacion(Parameters parameters) {
+    public CompletableFuture<ResponseEntity> sendHttpRequestInformacion(Parameters parameters) {
         ResponseEntity result = new ResponseEntity(HttpStatus.BAD_REQUEST);
         try {
             RestTemplate restTemplate = new RestTemplate();
