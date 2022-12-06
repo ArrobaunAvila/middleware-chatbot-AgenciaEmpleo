@@ -2,7 +2,6 @@ package com.middleware.colsubsidio.AgenciaEmpleo.api;
 
 import com.middleware.colsubsidio.AgenciaEmpleo.business.ControllerBusiness;
 import com.middleware.colsubsidio.AgenciaEmpleo.dto.*;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -52,7 +51,7 @@ public class ApiController {
     	@ApiResponse(code=200, message = "OK"),
          @ApiResponse(code = 400, message = "Bad Request!")
     })
-    @ApiOperation("flujo conversacional registro a curso")
+    @ApiOperation(value = "flujo conversacional registro a curso", hidden = true)
     @RequestMapping(value = "/processregisterCourse", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<ResponseDTO> processRegisterCourse(@RequestBody InformacionCursoRequest informacionCursoRequest) {
@@ -87,10 +86,18 @@ public class ApiController {
     	@ApiResponse(code=200, message = "OK"),
          @ApiResponse(code = 400, message = "Bad Request!")
     })
-    @ApiOperation("flujo conversacional hoja de vida preseleccionada, template 4 mensaje 4")
+    @ApiOperation("flujo conversacional hoja de vida preseleccionada, mensaje 4")
    @PostMapping("/processpreselection")
    @ResponseBody
    public ResponseEntity<ResponseDTO> processcvmessage4(@RequestBody InformacionHojaDeVidaRequest informacionHojaDeVidaRequest){
      return new ResponseEntity(this.controllerBussiness.procesoPreselection(informacionHojaDeVidaRequest), HttpStatus.OK);
    }
+
+   @ApiOperation(value = "flujo para registrar respuesta chatbot user" , hidden = true)
+   @PostMapping("/processResponseChatbotRegister")
+   @ResponseBody
+   public ResponseEntity<?> processResponseChatbotRegister(@RequestBody ProcessChatbotRequest processChatbotRequest){
+       return new ResponseEntity(this.controllerBussiness.procesoRegisterResponseUserChatBot(processChatbotRequest), HttpStatus.OK);
+   }
+
 }

@@ -1,14 +1,8 @@
 package com.middleware.colsubsidio.AgenciaEmpleo.services;
 
 
-import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.AgendamientoCita;
-import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.DetalleSolicitud;
-import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.InformacionVacante;
-import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.RegistroCurso;
-import com.middleware.colsubsidio.AgenciaEmpleo.model.repository.AgendaCitaRepository;
-import com.middleware.colsubsidio.AgenciaEmpleo.model.repository.DetalleRepository;
-import com.middleware.colsubsidio.AgenciaEmpleo.model.repository.InformacionRegistroCursoRepository;
-import com.middleware.colsubsidio.AgenciaEmpleo.model.repository.InformacionVacanteRepository;
+import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.*;
+import com.middleware.colsubsidio.AgenciaEmpleo.model.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +15,9 @@ public class PublicarService {
     private InformacionRegistroCursoRepository informacionRegistroCursoRepository;
 
     private AgendaCitaRepository agendaCitaRepository;
+
+    @Autowired
+    private DetalleChatbotRepository detalleChatbotRepository;
 
     @Autowired
     public PublicarService(InformacionVacanteRepository informacionVacanteRepository, DetalleRepository detalleRepository, InformacionRegistroCursoRepository informacionRegistroCursoRepository, AgendaCitaRepository agendaCitaRepository) {
@@ -49,5 +46,9 @@ public class PublicarService {
 
     public InformacionVacante guardarInformacionVacante(InformacionVacante informacionVacante){
         return this.informacionVacanteRepository.saveAndFlush(informacionVacante);
+    }
+
+    public DetalleResponseChatbot guardarResponseChatBot(DetalleResponseChatbot detalleResponseChatbot){
+        return this.detalleChatbotRepository.saveAndFlush(detalleResponseChatbot);
     }
 }

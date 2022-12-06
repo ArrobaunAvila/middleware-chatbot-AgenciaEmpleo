@@ -51,7 +51,6 @@ public class ConsumerPetitionService {
     public void consumerProcessAgencyChatbot() {
         try {
             log.info("Comenzando traza -->" + ConsumerPetitionService.class.getName() + "Cron envios flujos");
-
             this.getToken();
             this.processConsumerSendWithoutResponse();
         } catch (Exception e) {
@@ -67,7 +66,6 @@ public class ConsumerPetitionService {
             long timeLive = currMillis - tokenMillis;
             if (timeLive > propertiesUtil.getMaxConsumerInMillisRequest()) {
                 generateToken();
-                log.info("Traza generateToken() ---> se genera token para peticion");
             }
         }
         return token;
@@ -92,8 +90,8 @@ public class ConsumerPetitionService {
         HttpEntity<Request> entity = new HttpEntity<Request>(request, headers);
         ResponseEntity<Request> result =
                 restTemplate.exchange(uri.toUriString(), HttpMethod.POST, entity, Request.class);
-
-        return result.getBody().toString();
+        log.info("Se genera token Hsm -->" + result.getBody().getAccessToken().toString());
+        return result.getBody().getAccessToken().toString();
     }
 
     @Async("asyncExecutor")
@@ -133,7 +131,7 @@ public class ConsumerPetitionService {
 
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
-            headers.add("Authorization", "Bearer" + propertiesUtil.getAccessTokenTemporal().toString());
+            headers.add("Authorization", "Bearer" + this.getToken());
             uri.queryParam("asincrono", "true");
             HttpEntity entity = new HttpEntity(utils.objetcMapperString(parameters), headers);
             result = restTemplate.exchange(uri.toUriString(), HttpMethod.POST, entity, Object.class);

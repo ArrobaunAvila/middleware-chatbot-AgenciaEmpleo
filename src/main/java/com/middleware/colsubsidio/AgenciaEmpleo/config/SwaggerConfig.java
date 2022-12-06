@@ -31,7 +31,7 @@ public class SwaggerConfig {
 				"APi Middleware para flujos conversacionales Agencia de Empleo",
 				"1.0",
 				"",
-				new Contact("BitsAmericas", "https://www.bitsamericas.com/", "info@bitsamericas.com"),
+				new Contact("", "", ""),
 				"",
 				"",
 				Collections.emptyList()

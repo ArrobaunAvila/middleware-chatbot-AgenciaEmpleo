@@ -97,7 +97,7 @@ public class ControllerBusiness {
                     logService.completeResponseService(service , false, "" , true, e.getMessage());
                     log.error("Error! Excepcion insertando solicitud Informacion Vacante a curso--->" + ErrorNum.TECHNICAL.getDescription(), e.fillInStackTrace().getCause());
                 }
-                //logService.sendLogToKibana(middlewareRequest, true, proper.getKibana_process_cv_preselection());
+                logService.sendLogToKibana(middlewareRequest, true, proper.getKibana_process_cv_preselection());
             }
         } catch (Exception e) {
             log.error("Excepcion al realizar procesoHojaDeVidaSeleccionada  -> " + ErrorNum.TECHNICAL.getDescription(), e.fillInStackTrace().getCause());
@@ -280,5 +280,23 @@ public class ControllerBusiness {
             log.error("Excepcion al realizar proceso preseleccion template mensaje 4  -> " + ErrorNum.TECHNICAL.getDescription(), e.fillInStackTrace().getCause());
         }
         return this.responseDTO;
+    }
+
+    public ResponseDTO procesoRegisterResponseUserChatBot(ProcessChatbotRequest processChatbotRequest){
+        log.info("Comenzando traza --> procesoRegisterResponseUserChatBot()");
+        try {
+          publicarService.guardarResponseChatBot(builderUtils.registerBuilderDetalleChatbot(processChatbotRequest));
+
+          responseDTO = ResponseDTO.builder()
+                        .result(Result.builder()
+                                .code(HttpStatus.OK.value())
+                                .code_status(HttpStatus.OK.getReasonPhrase())
+                                .description(("Proceso response insertado!"))
+                                .build()).build();
+         log.error("Se inserta response Chatbot ---> " + processChatbotRequest.getUserDestination());
+        }catch (Exception e){
+            log.error("Error proceso procesoRegisterResponseUserChatBot ---> " +  e.getMessage());
+        }
+        return responseDTO;
     }
 }

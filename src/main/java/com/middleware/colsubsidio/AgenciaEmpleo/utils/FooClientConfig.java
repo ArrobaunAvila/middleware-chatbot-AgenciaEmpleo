@@ -25,7 +25,6 @@ import feign.httpclient.ApacheHttpClient;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import org.apache.http.client.config.RequestConfig;

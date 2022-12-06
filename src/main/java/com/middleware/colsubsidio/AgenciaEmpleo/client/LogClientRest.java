@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 
-@FeignClient(name = "elasticsearch", url = "${log.endpoint.url}", configuration = FooClientConfig.class)
+@FeignClient(name = "elasticsearch", url = "${elastic.endpoint}", configuration = FooClientConfig.class)
 @Headers("Accept: application/json")
 public interface LogClientRest {
     @PostMapping("${log.endpoint.log.method}")

@@ -1,18 +1,14 @@
 package com.middleware.colsubsidio.AgenciaEmpleo.utils;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.gson.Gson;
-import com.middleware.colsubsidio.AgenciaEmpleo.dto.AgendaCitaRequest;
-import com.middleware.colsubsidio.AgenciaEmpleo.dto.InformacionHojaDeVidaRequest;
-import com.middleware.colsubsidio.AgenciaEmpleo.dto.InformacionCursoRequest;
-import com.middleware.colsubsidio.AgenciaEmpleo.dto.InformacionVacanteRequest;
+import com.middleware.colsubsidio.AgenciaEmpleo.dto.*;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.Attends;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.Hsm;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.InformacionAgenda;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.Parameters;
-import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.AgendamientoCita;
-import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.DetalleSolicitud;
-import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.InformacionVacante;
-import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.RegistroCurso;
+import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.*;
+import com.middleware.colsubsidio.AgenciaEmpleo.model.repository.DetalleChatbotRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -49,7 +45,7 @@ public class BuilderUtils {
 
     public DetalleSolicitud registerBuilderDetalle(int tipoSolicitud) {
         return DetalleSolicitud.builder()
-                .fecha(handleDate.retornDateToString(new Date().toString()))
+                .fecha(new Date())
                 .estado(0)
                 .idTipoSolicitud(tipoSolicitud)
                 .build();
@@ -175,5 +171,15 @@ public class BuilderUtils {
         }
 
         return parameters;
+    }
+
+    public DetalleResponseChatbot registerBuilderDetalleChatbot(ProcessChatbotRequest processChatbotRequest) throws JsonProcessingException {
+        DetalleResponseChatbot detalleResponseChatbot = new DetalleResponseChatbot();
+        detalleResponseChatbot.setCelular(processChatbotRequest.getUserDestination());
+        detalleResponseChatbot.setContactar(processChatbotRequest.getOpcionUser().equals("Si") ? 1 : 0);
+        detalleResponseChatbot.setInteres(processChatbotRequest.getOpcionUserContact().equals("Si") ? 1 : 0);
+        detalleResponseChatbot.setResponseChatBot(utils.objetcMapperString(processChatbotRequest));
+        detalleResponseChatbot.setFechaRegistro(new Date());
+        return detalleResponseChatbot;
     }
 }

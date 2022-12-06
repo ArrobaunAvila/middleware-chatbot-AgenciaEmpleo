@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Method;
 import java.util.Date;
 
 @Slf4j
@@ -34,18 +35,19 @@ public class LogService {
 
 
      @Async
-    public void sendLogToKibana(MiddlewareRequest appoinmentKibana, Boolean ok,String side) {
-		try{
-			appoinmentKibana.setIndex(propertiesUtil.getKibanaIndex());
-		appoinmentKibana.setType(propertiesUtil.getKibanaType());
-		appoinmentKibana.setSide(side);
-		appoinmentKibana.setOk(ok);
-		appoinmentKibana.setMilliseconds(handleDate.getMillisecondsFromStartDate(appoinmentKibana.getStartdate()));
-		logClientRest.sendLogtoKibana(appoinmentKibana, getAuthToken());
-                }catch(Exception e){
-                    e.printStackTrace();
-                }
-     }
+    public void sendLogToKibana(MiddlewareRequest appoinmentKibana, Boolean ok, String side) {
+		 try {
+			 appoinmentKibana.setIndex(propertiesUtil.getKibanaIndex());
+			 appoinmentKibana.setType(propertiesUtil.getKibanaType());
+			 appoinmentKibana.setSide(side);
+			 appoinmentKibana.setOk(ok);
+			 appoinmentKibana.setMilliseconds(handleDate.getMillisecondsFromStartDate(appoinmentKibana.getStartdate()));
+			 logClientRest.sendLogtoKibana(appoinmentKibana, getAuthToken());
+		 } catch (Exception e) {
+			 log.error("Error sendLogToKibana -->" + e.getMessage() + e.getCause().getMessage().toString());
+			 e.printStackTrace();
+		 }
+	 }
 
      public void completeResponseService(MiddlewareRequest.Service service, boolean ok, Object response, boolean converResponseToJson, String description) {
 		service.setOk(ok);
