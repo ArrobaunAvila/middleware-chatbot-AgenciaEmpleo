@@ -1,352 +1,48 @@
-2022-12-06 09:27:22.486 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 1.8.0_352 on ubuntu-vivobook with PID 108546 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
-2022-12-06 09:27:22.496 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
-2022-12-06 09:27:23.508 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-06 09:27:23.581 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 61 ms. Found 4 JPA repository interfaces.
-2022-12-06 09:27:23.875 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=bb277680-1cfd-393f-a2e7-b40aad178c4c
-2022-12-06 09:27:24.357 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
-2022-12-06 09:27:24.372 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
-2022-12-06 09:27:24.373 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
-2022-12-06 09:27:24.625 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
-2022-12-06 09:27:24.626 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 2055 ms
-2022-12-06 09:27:25.133 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
-2022-12-06 09:27:25.609 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
-2022-12-06 09:27:25.658 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-06 09:27:25.706 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
-2022-12-06 09:27:25.861 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-06 09:27:25.950 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
-2022-12-06 09:27:26.547 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-06 09:27:26.554 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 09:27:27.498 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-12-06 09:27:28.345 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
-2022-12-06 09:27:28.579 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:61 - Started MiddlewareChatbotAgenciaEmpleoApplication in 6.755 seconds (JVM running for 7.375)
-2022-12-06 09:27:31.535 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-12-06 09:27:31.535 [INFO ] [] o.s.w.s.DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
-2022-12-06 09:27:31.537 [INFO ] [] o.s.w.s.DispatcherServlet:547 - Completed initialization in 2 ms
-2022-12-06 09:28:00.008 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 09:28:00.449 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:93 - Se genera token Hsm -->eyJhbGciOiJIUzUxMiJ9.eyJyb2xlc05hbWVzIjpbIk1BU1NJVkVfQVBJIl0sInN1YiI6ImFwaUBjb2xzdWJzaWRpbyIsInJvbGUiOlsiMSJdLCJpZENsaWVudCI6MTY0LCJjYW1wYWluZ3MiOlsiMzUyNiJdLCJwcm9maWxlIjoiMSIsImlkVXN1YXJpbyI6MjY2ODMsInNlc3Npb25JZCI6Ijc0Yjk1ZWNhMmVmZTRhOTdiN2QzYTE4NTczYmE4Y2E1IiwicGVybWlzc2lvbnNOYW1lIjpbIlJQVEkiXSwiaWRVc2VyQXBpIjoyODI2MCwiaWRzZXNpb24iOjAsImVuYWJsZSI6dHJ1ZSwibmFtZSI6IkFQSSBVc2VyIiwiZXhwIjoxNjcwMzc4OTQwLCJpYXQiOjE2NzAzMzU3NDB9.T-4KRxG32ZtDrQQYNqGUy_S4SnkXX5yFJa6xn4ch2kw6z7HvXKacR3xnly5LxVSPg0qsk82e9drERYzUG5Tp4A
-2022-12-06 09:30:00.001 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 09:32:00.001 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 09:33:03.594 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 09:33:03.598 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
-2022-12-06 09:33:03.602 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
-2022-12-06 09:39:52.593 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplicationTests:55 - Starting MiddlewareChatbotAgenciaEmpleoApplicationTests using Java 1.8.0_352 on ubuntu-vivobook with PID 115536 (started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
-2022-12-06 09:39:52.595 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplicationTests:634 - No active profile set, falling back to 1 default profile: "default"
-2022-12-06 09:39:53.488 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-06 09:39:53.544 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 46 ms. Found 4 JPA repository interfaces.
-2022-12-06 09:39:53.769 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=fc7208f3-9e75-35fb-a6ee-4b2b9a6449c8
-2022-12-06 09:39:54.292 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
-2022-12-06 09:39:54.693 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
-2022-12-06 09:39:54.750 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-06 09:39:54.807 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
-2022-12-06 09:39:54.843 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-06 09:39:54.957 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
-2022-12-06 09:39:55.455 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-06 09:39:55.463 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 09:39:56.329 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-12-06 09:39:57.998 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplicationTests:61 - Started MiddlewareChatbotAgenciaEmpleoApplicationTests in 5.802 seconds (JVM running for 7.082)
-2022-12-06 09:39:58.047 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 09:39:58.050 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
-2022-12-06 09:39:58.052 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
-2022-12-06 09:41:08.882 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 1.8.0_352 on ubuntu-vivobook with PID 116394 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
-2022-12-06 09:41:08.885 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
-2022-12-06 09:41:09.699 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-06 09:41:09.757 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 51 ms. Found 4 JPA repository interfaces.
-2022-12-06 09:41:10.036 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=bb277680-1cfd-393f-a2e7-b40aad178c4c
-2022-12-06 09:41:10.430 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
-2022-12-06 09:41:10.439 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
-2022-12-06 09:41:10.440 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
-2022-12-06 09:41:10.574 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
-2022-12-06 09:41:10.574 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 1649 ms
-2022-12-06 09:41:10.899 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
-2022-12-06 09:41:11.359 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
-2022-12-06 09:41:11.411 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-06 09:41:11.462 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
-2022-12-06 09:41:11.651 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-06 09:41:11.774 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
-2022-12-06 09:41:12.446 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-06 09:41:12.456 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 09:41:13.282 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-12-06 09:41:14.029 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
-2022-12-06 09:41:14.334 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:61 - Started MiddlewareChatbotAgenciaEmpleoApplication in 6.206 seconds (JVM running for 6.56)
-2022-12-06 09:41:19.771 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-12-06 09:41:19.771 [INFO ] [] o.s.w.s.DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
-2022-12-06 09:41:19.774 [INFO ] [] o.s.w.s.DispatcherServlet:547 - Completed initialization in 3 ms
-2022-12-06 09:41:32.947 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 09:41:32.949 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
-2022-12-06 09:41:32.951 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
-2022-12-06 09:42:13.491 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 1.8.0_352 on ubuntu-vivobook with PID 117034 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
-2022-12-06 09:42:13.494 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
-2022-12-06 09:42:14.380 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-06 09:42:14.442 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 53 ms. Found 4 JPA repository interfaces.
-2022-12-06 09:42:14.791 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=bb277680-1cfd-393f-a2e7-b40aad178c4c
-2022-12-06 09:42:15.277 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
-2022-12-06 09:42:15.291 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
-2022-12-06 09:42:15.292 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
-2022-12-06 09:42:15.388 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
-2022-12-06 09:42:15.389 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 1839 ms
-2022-12-06 09:42:15.830 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
-2022-12-06 09:42:16.256 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
-2022-12-06 09:42:16.308 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-06 09:42:16.356 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
-2022-12-06 09:42:16.537 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-06 09:42:16.650 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
-2022-12-06 09:42:17.469 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-06 09:42:17.482 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 09:42:18.615 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-12-06 09:42:19.625 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
-2022-12-06 09:42:19.962 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:61 - Started MiddlewareChatbotAgenciaEmpleoApplication in 7.654 seconds (JVM running for 8.023)
-2022-12-06 09:42:26.217 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-12-06 09:42:26.217 [INFO ] [] o.s.w.s.DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
-2022-12-06 09:42:26.219 [INFO ] [] o.s.w.s.DispatcherServlet:547 - Completed initialization in 1 ms
-2022-12-06 09:42:39.185 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 09:42:39.188 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
-2022-12-06 09:42:39.190 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
-2022-12-06 09:43:02.486 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 1.8.0_352 on ubuntu-vivobook with PID 117598 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
-2022-12-06 09:43:02.492 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
-2022-12-06 09:43:03.517 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-06 09:43:03.586 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
-2022-12-06 09:43:03.890 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=bb277680-1cfd-393f-a2e7-b40aad178c4c
-2022-12-06 09:43:04.416 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
-2022-12-06 09:43:04.434 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
-2022-12-06 09:43:04.435 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
-2022-12-06 09:43:04.535 [INFO ] [] o.a.c.c.C.[.[.[/doc]:173 - Initializing Spring embedded WebApplicationContext
-2022-12-06 09:43:04.536 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 1956 ms
-2022-12-06 09:43:05.004 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
-2022-12-06 09:43:05.484 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
-2022-12-06 09:43:05.536 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-06 09:43:05.589 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
-2022-12-06 09:43:05.763 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-06 09:43:05.919 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
-2022-12-06 09:43:06.780 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-06 09:43:06.794 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 09:43:07.758 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-12-06 09:43:08.621 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/doc'
-2022-12-06 09:43:08.880 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:61 - Started MiddlewareChatbotAgenciaEmpleoApplication in 7.118 seconds (JVM running for 7.665)
-2022-12-06 09:43:18.605 [INFO ] [] o.a.c.c.C.[.[.[/doc]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-12-06 09:43:18.606 [INFO ] [] o.s.w.s.DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
-2022-12-06 09:43:18.607 [INFO ] [] o.s.w.s.DispatcherServlet:547 - Completed initialization in 1 ms
-2022-12-06 09:43:34.905 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 09:43:34.908 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
-2022-12-06 09:43:34.913 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
-2022-12-06 09:44:13.150 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplicationTests:55 - Starting MiddlewareChatbotAgenciaEmpleoApplicationTests using Java 1.8.0_352 on ubuntu-vivobook with PID 118396 (started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
-2022-12-06 09:44:13.153 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplicationTests:634 - No active profile set, falling back to 1 default profile: "default"
-2022-12-06 09:44:13.968 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-06 09:44:14.015 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 38 ms. Found 4 JPA repository interfaces.
-2022-12-06 09:44:14.260 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=fc7208f3-9e75-35fb-a6ee-4b2b9a6449c8
-2022-12-06 09:44:14.737 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
-2022-12-06 09:44:15.154 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
-2022-12-06 09:44:15.210 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-06 09:44:15.253 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
-2022-12-06 09:44:15.289 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-06 09:44:15.393 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
-2022-12-06 09:44:15.942 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-06 09:44:15.952 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 09:44:16.854 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-12-06 09:44:18.546 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplicationTests:61 - Started MiddlewareChatbotAgenciaEmpleoApplicationTests in 5.948 seconds (JVM running for 7.265)
-2022-12-06 09:44:18.615 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 09:44:18.618 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
-2022-12-06 09:44:18.621 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
-2022-12-06 12:33:39.428 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 1.8.0_352 on ubuntu-vivobook with PID 215973 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
-2022-12-06 12:33:39.430 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
-2022-12-06 12:33:40.215 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-06 12:33:40.280 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 56 ms. Found 4 JPA repository interfaces.
-2022-12-06 12:33:40.514 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=bb277680-1cfd-393f-a2e7-b40aad178c4c
-2022-12-06 12:33:40.961 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
-2022-12-06 12:33:40.971 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
-2022-12-06 12:33:40.971 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
-2022-12-06 12:33:41.099 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
-2022-12-06 12:33:41.100 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 1624 ms
-2022-12-06 12:33:41.414 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
-2022-12-06 12:33:41.876 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
-2022-12-06 12:33:41.926 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-06 12:33:41.999 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
-2022-12-06 12:33:42.260 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-06 12:33:42.549 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
-2022-12-06 12:33:43.365 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-06 12:33:43.373 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 12:33:44.150 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-12-06 12:33:44.830 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
-2022-12-06 12:33:45.059 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:61 - Started MiddlewareChatbotAgenciaEmpleoApplication in 6.713 seconds (JVM running for 7.09)
-2022-12-06 12:34:00.011 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 12:34:01.144 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:93 - Se genera token Hsm -->eyJhbGciOiJIUzUxMiJ9.eyJyb2xlc05hbWVzIjpbIk1BU1NJVkVfQVBJIl0sInN1YiI6ImFwaUBjb2xzdWJzaWRpbyIsInJvbGUiOlsiMSJdLCJpZENsaWVudCI6MTY0LCJjYW1wYWluZ3MiOlsiMzUyNiJdLCJwcm9maWxlIjoiMSIsImlkVXN1YXJpbyI6MjY2ODMsInNlc3Npb25JZCI6IjhjZjNhN2YxZDhkOTRjNjQ5OWY0OGRjNWEwZjIyN2U3IiwicGVybWlzc2lvbnNOYW1lIjpbIlJQVEkiXSwiaWRVc2VyQXBpIjoyODI2MCwiaWRzZXNpb24iOjAsImVuYWJsZSI6dHJ1ZSwibmFtZSI6IkFQSSBVc2VyIiwiZXhwIjoxNjcwMzkxMjQwLCJpYXQiOjE2NzAzNDgwNDB9.5tqZdhUY0eRkyXIqdcbY8c2_rpifk-xuBBXtaAXvMtFlqIBhhMpt6iMNF3GvIIkw4znZS8icPhZpFtI23zl7pw
-2022-12-06 12:34:02.641 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-12-06 12:34:02.641 [INFO ] [] o.s.w.s.DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
-2022-12-06 12:34:02.644 [INFO ] [] o.s.w.s.DispatcherServlet:547 - Completed initialization in 2 ms
-2022-12-06 12:36:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 12:36:00.407 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"58","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_1","parameters":["Daniel Avila Cardenas","*Desarrollador Backend*","*BitsAmericas*","1000000","Lunes - Viernes 8am","Calle las americas"],"destinations":[{"destination":"573017321055"}],"attends":{"waitTime":5}}}
-2022-12-06 12:36:01.126 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 17:36:01 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->58
-2022-12-06 12:38:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 12:38:00.118 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"59","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_1","parameters":["Daniel Avila Cardenas","*Desarrollador Backend*","*BitsAmericas*","1000000","Lunes - Viernes 8am","Calle las americas"],"destinations":[{"destination":"573017321055"}],"attends":{"waitTime":5}}}
-2022-12-06 12:38:00.522 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 17:38:00 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->59
-2022-12-06 12:40:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 12:42:00.001 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 12:42:00.148 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"60","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_1","parameters":["Daniel Avila Cardenas","*Desarrollador Backend*","*BitsAmericas*","1000000","Lunes - Viernes 8am","Calle las americas"],"destinations":[{"destination":"573017321055"}],"attends":{"waitTime":5}}}
-2022-12-06 12:42:00.547 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 17:42:00 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->60
-2022-12-06 12:44:00.001 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 12:46:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 12:48:00.001 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 12:50:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 12:52:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 12:54:00.001 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 12:56:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 12:58:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 12:59:54.070 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 12:59:54.071 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
-2022-12-06 12:59:54.074 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
-2022-12-06 14:09:23.972 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 1.8.0_352 on ubuntu-vivobook with PID 267322 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
-2022-12-06 14:09:23.975 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
-2022-12-06 14:09:24.837 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-06 14:09:24.913 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 64 ms. Found 5 JPA repository interfaces.
-2022-12-06 14:09:25.251 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=adabee1a-6fc9-3064-9a2d-758be86e7e68
-2022-12-06 14:09:25.581 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
-2022-12-06 14:09:25.591 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
-2022-12-06 14:09:25.591 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
-2022-12-06 14:09:25.712 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
-2022-12-06 14:09:25.712 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 1676 ms
-2022-12-06 14:09:26.024 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
-2022-12-06 14:09:26.432 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
-2022-12-06 14:09:26.486 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-06 14:09:26.536 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
-2022-12-06 14:09:26.708 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-06 14:09:26.781 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
-2022-12-06 14:09:27.385 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-06 14:09:27.394 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 14:09:28.431 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-12-06 14:09:29.139 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
-2022-12-06 14:09:29.401 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:61 - Started MiddlewareChatbotAgenciaEmpleoApplication in 6.169 seconds (JVM running for 6.565)
-2022-12-06 14:10:00.010 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:10:00.608 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:93 - Se genera token Hsm -->eyJhbGciOiJIUzUxMiJ9.eyJyb2xlc05hbWVzIjpbIk1BU1NJVkVfQVBJIl0sInN1YiI6ImFwaUBjb2xzdWJzaWRpbyIsInJvbGUiOlsiMSJdLCJpZENsaWVudCI6MTY0LCJjYW1wYWluZ3MiOlsiMzUyNiJdLCJwcm9maWxlIjoiMSIsImlkVXN1YXJpbyI6MjY2ODMsInNlc3Npb25JZCI6IjhjZjNhN2YxZDhkOTRjNjQ5OWY0OGRjNWEwZjIyN2U3IiwicGVybWlzc2lvbnNOYW1lIjpbIlJQVEkiXSwiaWRVc2VyQXBpIjoyODI2MCwiaWRzZXNpb24iOjAsImVuYWJsZSI6dHJ1ZSwibmFtZSI6IkFQSSBVc2VyIiwiZXhwIjoxNjcwMzkxMjQwLCJpYXQiOjE2NzAzNDgwNDB9.5tqZdhUY0eRkyXIqdcbY8c2_rpifk-xuBBXtaAXvMtFlqIBhhMpt6iMNF3GvIIkw4znZS8icPhZpFtI23zl7pw
-2022-12-06 14:10:17.589 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-12-06 14:10:17.589 [INFO ] [] o.s.w.s.DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
-2022-12-06 14:10:17.591 [INFO ] [] o.s.w.s.DispatcherServlet:547 - Completed initialization in 1 ms
-2022-12-06 14:12:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:12:00.176 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"65","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_1","parameters":["Daniel Avila Cardenas","*Desarrollo fullstack*","*Colsubsidio*","10000","Lunes - Viernes 8am","Cra54D#56"],"destinations":[{"destination":"573017321055"}],"attends":{"waitTime":5}}}
-2022-12-06 14:12:00.802 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 19:12:00 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->65
-2022-12-06 14:14:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:14:00.135 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"66","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_1","parameters":["Daniel Avila Cardenas","*Desarrollo fullstack*","*Colsubsidio*","10000","Lunes - Viernes 8am","Cra54D#56"],"destinations":[{"destination":"573017321055"}],"attends":{"waitTime":5}}}
-2022-12-06 14:14:00.612 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 19:14:00 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->66
-2022-12-06 14:16:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:16:00.143 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"67","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_1","parameters":["Daniel Avila Cardenas","*Desarrollo fullstack*","*Colsubsidio*","10000","Lunes - Viernes 8am","Cra54D#56"],"destinations":[{"destination":"573017321055"}],"attends":{"waitTime":5}}}
-2022-12-06 14:16:00.624 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 19:16:00 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->67
-2022-12-06 14:18:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:20:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:22:00.001 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:24:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:24:00.132 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"68","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_4","parameters":["string","string","string"],"destinations":[{"destination":"57string"},{"destination":"57string"}],"attends":{"waitTime":5}}}
-2022-12-06 14:24:00.493 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 19:24:00 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->68
-2022-12-06 14:26:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:26:00.129 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"69","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_1","parameters":["Daniel Avila Cardenas","*Desarrollo fullstack*","*Colsubsidio*","10000","Lunes - Viernes 8am","Cra54D#56"],"destinations":[{"destination":"573017321055"}],"attends":{"waitTime":5}}}
-2022-12-06 14:26:00.487 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 19:26:00 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->69
-2022-12-06 14:28:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:30:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:30:00.521 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"70","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_1","parameters":["Daniel Avila Cardenas","*Desarrollador FullStack*","*Colsubsidio*","10000","Lunes - Viernes 8am","Cra54D#56"],"destinations":[{"destination":"573017321055"}],"attends":{"waitTime":5}}}
-2022-12-06 14:30:00.895 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 19:30:00 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->70
-2022-12-06 14:32:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:32:00.122 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"71","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_1","parameters":["Daniel Avila Cardenas","*Desarrollador FullStack*","*Colsubsidio*","10000","Lunes - Viernes 8am","Cra54D#56"],"destinations":[{"destination":"573017321055"}],"attends":{"waitTime":5}}}
-2022-12-06 14:32:00.475 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 19:32:00 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->71
-2022-12-06 14:34:00.001 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:36:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:38:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:38:00.141 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"72","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_1","parameters":["Daniel Avila Cardenas","*Desarrollador FullStack*","*Colsubsidio*","10000","Lunes - Viernes 8am","Cra54D#56"],"destinations":[{"destination":"573017321055"}],"attends":{"waitTime":5}}}
-2022-12-06 14:38:00.558 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 19:38:00 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->72
-2022-12-06 14:40:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:42:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:42:00.248 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"73","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_1","parameters":["Daniel Avila Cardenas","*Desarrollador FullStack*","*Colsubsidio*","10000","Lunes - Viernes 8am","Cra54D#56"],"destinations":[{"destination":"573017321055"}],"attends":{"waitTime":5}}}
-2022-12-06 14:42:00.902 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 19:42:00 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->73
-2022-12-06 14:44:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:46:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:48:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:50:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:52:00.001 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:54:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:56:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 14:58:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:00:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:02:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:04:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:06:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:08:00.001 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:10:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:12:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:14:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:16:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:18:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:18:00.219 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"74","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_1","parameters":["Daniel Avila Cardenas","*Desarrollador FullStack*","*Colsubsidio*","10000","Lunes - Viernes 8am","Cra54D#56"],"destinations":[{"destination":"573017321055"}],"attends":{"waitTime":5}}}
-2022-12-06 15:18:00.769 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 20:18:00 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->74
-2022-12-06 15:20:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:22:00.001 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:24:00.001 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:26:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:28:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:30:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:32:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:34:00.001 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:36:00.001 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:38:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 15:38:22.128 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 15:38:22.133 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
-2022-12-06 15:38:22.140 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
-2022-12-06 16:07:13.323 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 1.8.0_352 on ubuntu-vivobook with PID 333445 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
-2022-12-06 16:07:13.325 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
-2022-12-06 16:07:14.039 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-06 16:07:14.087 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 41 ms. Found 5 JPA repository interfaces.
-2022-12-06 16:07:14.296 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=adabee1a-6fc9-3064-9a2d-758be86e7e68
-2022-12-06 16:07:14.596 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
-2022-12-06 16:07:14.605 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
-2022-12-06 16:07:14.606 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
-2022-12-06 16:07:14.690 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
-2022-12-06 16:07:14.691 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 1310 ms
-2022-12-06 16:07:14.979 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
-2022-12-06 16:07:15.407 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
-2022-12-06 16:07:15.449 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-06 16:07:15.492 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
-2022-12-06 16:07:15.625 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-06 16:07:15.709 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
-2022-12-06 16:07:16.273 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-06 16:07:16.281 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 16:07:17.027 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-12-06 16:07:17.711 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
-2022-12-06 16:07:17.966 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:61 - Started MiddlewareChatbotAgenciaEmpleoApplication in 5.305 seconds (JVM running for 5.798)
-2022-12-06 16:07:21.215 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-12-06 16:07:21.215 [INFO ] [] o.s.w.s.DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
-2022-12-06 16:07:21.218 [INFO ] [] o.s.w.s.DispatcherServlet:547 - Completed initialization in 3 ms
-2022-12-06 16:08:00.008 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:08:01.048 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:93 - Se genera token Hsm -->eyJhbGciOiJIUzUxMiJ9.eyJyb2xlc05hbWVzIjpbIk1BU1NJVkVfQVBJIl0sInN1YiI6ImFwaUBjb2xzdWJzaWRpbyIsInJvbGUiOlsiMSJdLCJpZENsaWVudCI6MTY0LCJjYW1wYWluZ3MiOlsiMzUyNiJdLCJwcm9maWxlIjoiMSIsImlkVXN1YXJpbyI6MjY2ODMsInNlc3Npb25JZCI6IjIyZGY1YTI0YTI1YjRlMjI5NzU3OGZkMzkyZGVhOWUzIiwicGVybWlzc2lvbnNOYW1lIjpbIlJQVEkiXSwiaWRVc2VyQXBpIjoyODI2MCwiaWRzZXNpb24iOjAsImVuYWJsZSI6dHJ1ZSwibmFtZSI6IkFQSSBVc2VyIiwiZXhwIjoxNjcwNDA0MDgwLCJpYXQiOjE2NzAzNjA4ODB9.x4C_OrJ-aGsR9IZEVV9c-mqJEO0hHlcBB3pYeEhhDevlKvQJTEQN6QwiGCfNYoNmPTBSKzBFtLj2UCqapZJMwA
-2022-12-06 16:10:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:12:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:14:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:16:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:18:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:18:00.191 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"76","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_1","parameters":["Daniel Avila Cardenas","*Desarrollo backend*","*BitsAmericas*","100000","Lunes - Viernes 8AM","Calle45G # 23"],"destinations":[{"destination":"573017321055"}],"attends":{"waitTime":5}}}
-2022-12-06 16:18:01.599 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 21:18:01 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->76
-2022-12-06 16:20:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:22:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:24:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:26:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:28:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:30:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:32:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:34:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:36:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:36:00.136 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"78","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_1","parameters":["Daniel Avila Cardenas","*Desarrollo backend*","*BitsAmericas*","100000","Lunes - Viernes 8AM","Calle45G # 23"],"destinations":[{"destination":"573017321055"}],"attends":{"waitTime":5}}}
-2022-12-06 16:36:01.712 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 21:36:01 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->78
-2022-12-06 16:38:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:38:00.139 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"79","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_1","parameters":["Daniel Avila Cardenas","*Desarrollo backend*","*BitsAmericas*","100000","Lunes - Viernes 8AM","Calle45G # 23"],"destinations":[{"destination":"573017321055"}],"attends":{"waitTime":5}}}
-2022-12-06 16:38:00.700 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 21:38:00 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->79
-2022-12-06 16:40:00.001 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:42:00.001 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:44:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:46:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:48:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:50:00.001 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:52:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:54:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:54:00.126 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"80","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_1","parameters":["Daniel Avila Cardenas","*Desarrollo backend*","*BitsAmericas*","100000","Lunes - Viernes 8AM","Calle45G # 23"],"destinations":[{"destination":"573017321055"}],"attends":{"waitTime":5}}}
-2022-12-06 16:54:00.799 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 21:54:00 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->80
-2022-12-06 16:56:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:56:00.123 [INFO ] [] c.m.c.A.u.Utils:61 - Traza objetcMapperString() --> Json de envio{"id":"81","did":"573102468086","type":"HSM","channel":"WHATSAPP","hsm":{"languageCode":"es","botAttention":true,"namespace":"8a477c20_41d7_4c06_90f8_1bec2d6fddf3","template":"agencia_de_empleo_flujo_conversacional_1","parameters":["Daniel Avila Cardenas","*Desarrollo backend*","*BitsAmericas*","100000","Lunes - Viernes 8AM","Calle45G # 23"],"destinations":[{"destination":"573017321055"}],"attends":{"waitTime":5}}}
-2022-12-06 16:56:00.504 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:109 - Se Envio data<200,[Date:"Tue, 06 Dec 2022 21:56:00 GMT", Content-Type:"application/json", Content-Length:"0", Connection:"keep-alive", Strict-Transport-Security:"max-age=15724800; includeSubDomains", Access-Control-Allow-Credentials:"true"]>Detalle -->81
-2022-12-06 16:58:00.000 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
-2022-12-06 16:59:18.174 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-12-06 16:59:18.177 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
-2022-12-06 16:59:18.182 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2022-12-12 09:06:38.530 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 1.8.0_352 on ubuntu-vivobook with PID 153808 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
+2022-12-12 09:06:38.536 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
+2022-12-12 09:06:39.450 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-12 09:06:39.519 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 60 ms. Found 5 JPA repository interfaces.
+2022-12-12 09:06:39.858 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=4567dd16-7455-301a-b63d-6e4ee4a249c2
+2022-12-12 09:06:40.430 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
+2022-12-12 09:06:40.444 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2022-12-12 09:06:40.445 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-12 09:06:40.654 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
+2022-12-12 09:06:40.655 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 2068 ms
+2022-12-12 09:06:40.910 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2022-12-12 09:06:41.368 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2022-12-12 09:06:41.428 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-12 09:06:41.485 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-12 09:06:41.696 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-12 09:06:41.828 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+2022-12-12 09:06:42.527 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-12 09:06:42.535 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-12 09:06:43.604 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-12 09:06:44.574 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
+2022-12-12 09:06:44.831 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:61 - Started MiddlewareChatbotAgenciaEmpleoApplication in 6.867 seconds (JVM running for 7.941)
+2022-12-12 09:06:47.713 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-12 09:06:47.715 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2022-12-12 09:06:47.718 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2022-12-12 10:48:17.900 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 1.8.0_352 on ubuntu-vivobook with PID 210589 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
+2022-12-12 10:48:17.903 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
+2022-12-12 10:48:18.984 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-12 10:48:19.046 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 52 ms. Found 5 JPA repository interfaces.
+2022-12-12 10:48:19.271 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=4567dd16-7455-301a-b63d-6e4ee4a249c2
+2022-12-12 10:48:19.846 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
+2022-12-12 10:48:19.855 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2022-12-12 10:48:19.856 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-12 10:48:19.960 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
+2022-12-12 10:48:19.960 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 2003 ms
+2022-12-12 10:48:20.334 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2022-12-12 10:48:20.740 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2022-12-12 10:48:20.789 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-12 10:48:20.840 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-12 10:48:21.021 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-12 10:48:21.193 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+2022-12-12 10:48:22.066 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-12 10:48:22.079 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-12 10:48:23.155 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-12 10:48:23.861 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
+2022-12-12 10:48:24.069 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:61 - Started MiddlewareChatbotAgenciaEmpleoApplication in 6.788 seconds (JVM running for 7.192)
+2022-12-12 10:48:30.039 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-12 10:48:30.042 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2022-12-12 10:48:30.044 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.

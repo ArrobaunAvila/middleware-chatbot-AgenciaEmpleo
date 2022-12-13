@@ -7,10 +7,18 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
-@Configuration
 @Getter
 @PropertySource("file:config/general.properties")
 public class PropertiesUtil {
+
+    @Value("${spring.datasource.url}")
+    private String url_database;
+
+    @Value("${spring.datasource.username}")
+    private String username_database;
+
+    @Value("${spring.datasource.password}")
+    private String pass_database;
 
     @Value("${api.hsm.url.login}")
     private String apiHsmLogin;
@@ -94,5 +102,12 @@ public class PropertiesUtil {
     @Value("${kibana.log.side.cron.envio}")
     private String process_cron;
 
+    @Value("${cron.expression.process.response.minutes}")
+    private String process_response_chatbot_cron;
 
+    @Value("${database.sqlServer.query.detalle.sql1}")
+    private String queryAllDetallesChatbot;
+
+    @Value("${database.sqlServer.query.detalle.sql2}")
+    private String queryDetalleByCelular;
 }

@@ -3,16 +3,16 @@ package com.middleware.colsubsidio.AgenciaEmpleo.utils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.gson.Gson;
 import com.middleware.colsubsidio.AgenciaEmpleo.dto.*;
-import com.middleware.colsubsidio.AgenciaEmpleo.model.Attends;
-import com.middleware.colsubsidio.AgenciaEmpleo.model.Hsm;
-import com.middleware.colsubsidio.AgenciaEmpleo.model.InformacionAgenda;
-import com.middleware.colsubsidio.AgenciaEmpleo.model.Parameters;
+import com.middleware.colsubsidio.AgenciaEmpleo.model.*;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.*;
+import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.InformacionVacante;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.repository.DetalleChatbotRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -151,7 +151,7 @@ public class BuilderUtils {
                 parameters.setHsm(hsm);
 
             }else if(template == 1){
-
+                //Parameters Informacion vacante proceso respuesta - intertes
                 listParameters = Arrays.asList(detalleSolicitud.getInformacionVacante().getNombreCesante(),
                         "*"+detalleSolicitud.getInformacionVacante().getNombreVacante().concat("*"),
                         "*"+detalleSolicitud.getInformacionVacante().getEmpresaVacante().concat("*"),
@@ -176,10 +176,25 @@ public class BuilderUtils {
     public DetalleResponseChatbot registerBuilderDetalleChatbot(ProcessChatbotRequest processChatbotRequest) throws JsonProcessingException {
         DetalleResponseChatbot detalleResponseChatbot = new DetalleResponseChatbot();
         detalleResponseChatbot.setCelular(processChatbotRequest.getUserDestination());
-        detalleResponseChatbot.setContactar(processChatbotRequest.getOpcionUser().equals("Si") ? 1 : 0);
-        detalleResponseChatbot.setInteres(processChatbotRequest.getOpcionUserContact().equals("Si") ? 1 : 0);
+        detalleResponseChatbot.setInteres(processChatbotRequest.getOpcionUser().equals("Si") ? 1 : 0);
+        detalleResponseChatbot.setContactar(processChatbotRequest.getOpcionUserContact().equals("Si") ? 1 : 0);
         detalleResponseChatbot.setResponseChatBot(utils.objetcMapperString(processChatbotRequest));
         detalleResponseChatbot.setFechaRegistro(new Date());
         return detalleResponseChatbot;
+    }
+
+
+    public ResponseDTO generateResponse200(HttpStatus httpStatus , String description){
+        return ResponseDTO.builder().result(Result.builder().code(httpStatus.value())
+                                .code_status(httpStatus.getReasonPhrase())
+                                .description((description))
+                                .build()).build();
+    }
+
+     public ResponseDTO generateResponse400(HttpStatus httpStatus , String description){
+        return ResponseDTO.builder().result(Result.builder().code(httpStatus.value())
+                                .code_status(httpStatus.getReasonPhrase())
+                                .description((description))
+                                .build()).build();
     }
 }

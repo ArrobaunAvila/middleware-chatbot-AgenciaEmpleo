@@ -8,7 +8,10 @@ public class CronScheduler {
 
    private  ConsumerPetitionService consumerPetitionService;
 
-   public CronScheduler (ConsumerPetitionService consumerPetitionService){
+   private ConsumerResponseService consumerResponseService;
+
+   public CronScheduler (ConsumerPetitionService consumerPetitionService, ConsumerResponseService consumerResponseService){
+   this.consumerPetitionService = consumerPetitionService;
    this.consumerPetitionService = consumerPetitionService;
    }
 
@@ -17,5 +20,9 @@ public class CronScheduler {
        consumerPetitionService.consumerProcessAgencyChatbot();
   }
 
+  @Scheduled(cron = "${cron.expression.process.response.minutes}")
+  public void scheduleTaskProcessResponseChatbot(){
+      this.consumerResponseService.consumerProcessResponseAgencyChatbot();
+  }
 
 }

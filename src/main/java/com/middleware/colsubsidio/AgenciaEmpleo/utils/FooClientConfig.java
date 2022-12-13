@@ -56,7 +56,7 @@ public class FooClientConfig implements AsyncUncaughtExceptionHandler {
 	    return converter;
 	}
 
-	@Bean
+	@Bean(name = "restTemplateMaster")
 	public RestTemplate createRestTemplate() {
 		ObjectMapper objectMapper = customObjectMapper();
 		MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();

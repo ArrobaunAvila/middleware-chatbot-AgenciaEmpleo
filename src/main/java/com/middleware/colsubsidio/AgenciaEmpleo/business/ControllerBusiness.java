@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 @Component
 @Slf4j
@@ -72,12 +71,7 @@ public class ControllerBusiness {
 
                 logService.completeResponseService(service,
                         false,  "", true, "Error! Datos entry invalidos!");
-                this.responseDTO = ResponseDTO.builder()
-                        .result(Result.builder()
-                                .code(HttpStatus.BAD_REQUEST.value())
-                                .code_status(HttpStatus.BAD_REQUEST.getReasonPhrase())
-                                .description((ErrorNum.NO_ENTRY_DATA.getDescription()))
-                                .build()).build();
+                this.responseDTO = builderUtils.generateResponse400(HttpStatus.BAD_REQUEST,ErrorNum.NO_ENTRY_DATA.getDescription());
             } else {
 
                 try {
@@ -87,11 +81,7 @@ public class ControllerBusiness {
 
                     logService.completeResponseService(service , true, info , true, "Ok! Registros Insertados correctamente");
 
-                    this.responseDTO = ResponseDTO.builder()
-                            .result(Result.builder().code(HttpStatus.OK.value())
-                                    .code_status(HttpStatus.OK.getReasonPhrase())
-                                    .description("Exito! proceso realizado")
-                                    .build()).build();
+                    this.responseDTO = builderUtils.generateResponse200(HttpStatus.OK,"Exito! proceso realizado");
 
                 } catch (Exception e) {
                     logService.completeResponseService(service , false, "" , true, e.getMessage());
@@ -114,12 +104,7 @@ public class ControllerBusiness {
                     || !utils.validateCriterios(informacionCursoRequest.getInfoCesante().getNombre())
                     || !utils.validateCriterios(informacionCursoRequest.getInfoCesante().getCelular())) {
 
-                this.responseDTO = ResponseDTO.builder()
-                        .result(Result.builder()
-                                .code(HttpStatus.BAD_REQUEST.value())
-                                .code_status(HttpStatus.BAD_REQUEST.getReasonPhrase())
-                                .description((ErrorNum.NO_ENTRY_DATA.getDescription()))
-                                .build()).build();
+                this.responseDTO = builderUtils.generateResponse400(HttpStatus.BAD_REQUEST,ErrorNum.NO_ENTRY_DATA.getDescription());
 
                 return this.responseDTO;
             }
@@ -130,11 +115,7 @@ public class ControllerBusiness {
                                 publicarService.guardarDetalleSolicitud(builderUtils.registerBuilderDetalle(3))));
 
                 if (Objects.nonNull(info)) {
-                     this.responseDTO = ResponseDTO.builder()
-                            .result(Result.builder().code(HttpStatus.OK.value())
-                                    .code_status(HttpStatus.OK.getReasonPhrase())
-                                    .description("Exito! proceso realizado")
-                                    .build()).build();
+                     this.responseDTO = builderUtils.generateResponse200(HttpStatus.OK,"Exito! proceso realizado");
                 }
             } catch (Exception e) {
                 log.error("Error! Excepcion insertando solicitud registro a curso--->" + ErrorNum.TECHNICAL.getDescription(), e.fillInStackTrace().getCause());
@@ -158,12 +139,7 @@ public class ControllerBusiness {
                 || !utils.validateCriterios(agendaCitaRequest.getInfoAgenda().getAgencia().getNombre())
                 || !utils.validateCriterios(agendaCitaRequest.getInfoAgenda().getFecha().getDia())){
 
-                this.responseDTO = ResponseDTO.builder()
-                        .result(Result.builder()
-                                .code(HttpStatus.BAD_REQUEST.value())
-                                .code_status(HttpStatus.BAD_REQUEST.getReasonPhrase())
-                                .description((ErrorNum.NO_ENTRY_DATA.getDescription()))
-                                .build()).build();
+                this.responseDTO = builderUtils.generateResponse400(HttpStatus.BAD_REQUEST, ErrorNum.NO_ENTRY_DATA.getDescription());
 
                 return this.responseDTO;
             }
@@ -172,11 +148,7 @@ public class ControllerBusiness {
                 publicarService.guardarInformacionAgendamientoCita(builderUtils.registerBuilderAgendamientoCita(agendaCitaRequest,
                         publicarService.guardarDetalleSolicitud(builderUtils.registerBuilderDetalle(2))));
 
-                     this.responseDTO = ResponseDTO.builder()
-                            .result(Result.builder().code(HttpStatus.OK.value())
-                                    .code_status(HttpStatus.OK.getReasonPhrase())
-                                    .description("Exito! proceso realizado")
-                                    .build()).build();
+                     this.responseDTO = builderUtils.generateResponse200(HttpStatus.OK,"Exito! proceso realizado");
             }catch (Exception e){
                 log.error("Error! Excepcion insertando solicitud Agenga cita --->" + ErrorNum.TECHNICAL.getDescription(), e.fillInStackTrace().getCause());
             }
@@ -211,19 +183,10 @@ public class ControllerBusiness {
 
                             }
                        });
-                responseDTO = ResponseDTO.builder().objectsNoProcess(objectInvalidos)
-                        .result(Result.builder().code(HttpStatus.OK.value())
-                                .code_status(HttpStatus.OK.getReasonPhrase())
-                                .description("Exito! proceso realizado")
-                                .build()).build();
+                responseDTO = builderUtils.generateResponse200(HttpStatus.OK , "Exito! proceso realizado");
 
             } else {
-                responseDTO = ResponseDTO.builder()
-                        .result(Result.builder()
-                                .code(HttpStatus.BAD_REQUEST.value())
-                                .code_status(HttpStatus.BAD_REQUEST.getReasonPhrase())
-                                .description((ErrorNum.NO_ENTRY_DATA.getDescription()))
-                                .build()).build();
+                responseDTO = builderUtils.generateResponse400(HttpStatus.BAD_REQUEST,ErrorNum.NO_ENTRY_DATA.getDescription());
 
             }
         } catch (Exception e) {
@@ -255,12 +218,7 @@ public class ControllerBusiness {
 
                 logService.completeResponseService(service,
                         false,  "", true, "Error! Datos entry invalidos!");
-                this.responseDTO = ResponseDTO.builder()
-                        .result(Result.builder()
-                                .code(HttpStatus.BAD_REQUEST.value())
-                                .code_status(HttpStatus.BAD_REQUEST.getReasonPhrase())
-                                .description((ErrorNum.NO_ENTRY_DATA.getDescription()))
-                                .build()).build();
+                this.responseDTO = builderUtils.generateResponse400(HttpStatus.BAD_REQUEST,ErrorNum.NO_ENTRY_DATA.getDescription());
             } else {
 
                 try {
@@ -282,20 +240,22 @@ public class ControllerBusiness {
         return this.responseDTO;
     }
 
-    public ResponseDTO procesoRegisterResponseUserChatBot(ProcessChatbotRequest processChatbotRequest){
+    public ResponseDTO procesoRegisterResponseUserChatBot(ProcessChatbotRequest processChatbotRequest) {
         log.info("Comenzando traza --> procesoRegisterResponseUserChatBot()");
         try {
-          publicarService.guardarResponseChatBot(builderUtils.registerBuilderDetalleChatbot(processChatbotRequest));
+            responseDTO = builderUtils.generateResponse400(HttpStatus.BAD_REQUEST, "No se inicio proceso response");
 
-          responseDTO = ResponseDTO.builder()
-                        .result(Result.builder()
-                                .code(HttpStatus.OK.value())
-                                .code_status(HttpStatus.OK.getReasonPhrase())
-                                .description(("Proceso response insertado!"))
-                                .build()).build();
-         log.error("Se inserta response Chatbot ---> " + processChatbotRequest.getUserDestination());
-        }catch (Exception e){
-            log.error("Error proceso procesoRegisterResponseUserChatBot ---> " +  e.getMessage());
+            if (!processChatbotRequest.getUserDestination().isEmpty() && !processChatbotRequest.getOpcionUser().isEmpty()) {
+
+                publicarService.guardarResponseChatBot(builderUtils.registerBuilderDetalleChatbot(processChatbotRequest));
+
+                responseDTO = builderUtils.generateResponse200(HttpStatus.OK,"Proceso registro response exitoso!");
+
+                log.error("Se inserta response Chatbot ---> " + processChatbotRequest.getUserDestination());
+            }
+        } catch (Exception e) {
+            log.error("Error proceso procesoRegisterResponseUserChatBot ---> " + e.getMessage() + e.fillInStackTrace().getStackTrace());
+            e.printStackTrace();
         }
         return responseDTO;
     }

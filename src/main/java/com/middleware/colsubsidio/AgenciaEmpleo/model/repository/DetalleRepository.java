@@ -11,10 +11,11 @@ import java.util.Optional;
 @Repository
 public interface DetalleRepository extends JpaRepository<DetalleSolicitud, Long> {
 
-    @Query("SELECT d FROM DetalleSolicitud d where d.estado=0")
+    @Query("SELECT d FROM DetalleSolicitud d where d.estado=0 order by d.idTipoSolicitud asc")
     Optional<List<DetalleSolicitud>> getAllDetailsWithoutResponse();
 
     @Query("SELECT d FROM DetalleSolicitud d where d.estado='p' and d.idTipoSolicitud = 1")
     Optional<List<DetalleSolicitud>> getAllDetailWithAnswer();
+
 
 }

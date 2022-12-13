@@ -44,5 +44,4 @@ public class DetalleResponseChatbot{
   private Date fechaRespuestaAgencia;
 
 
-
 }
