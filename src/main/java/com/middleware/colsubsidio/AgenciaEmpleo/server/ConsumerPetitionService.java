@@ -80,7 +80,9 @@ public class ConsumerPetitionService {
 
 
     private String consumerAccessToken(Request request) {
-        RestTemplate restTemplate = new RestTemplate();
+        String res = null;
+     try {
+           RestTemplate restTemplate = new RestTemplate();
         restTemplate.setRequestFactory(new HttpComponentsClientHttpRequestFactory());
         UriComponentsBuilder uri = UriComponentsBuilder.fromHttpUrl(propertiesUtil.getApiHsmLogin());
 
@@ -90,8 +92,11 @@ public class ConsumerPetitionService {
         HttpEntity<Request> entity = new HttpEntity<Request>(request, headers);
         ResponseEntity<Request> result =
                 restTemplate.exchange(uri.toUriString(), HttpMethod.POST, entity, Request.class);
-        log.info("Se genera token Hsm -->" + result.getBody().getAccessToken().toString());
-        return result.getBody().getAccessToken().toString();
+        res =  Optional.ofNullable(result.getBody()).get().toString();
+     } catch (Exception e) {
+        log.error("Error! Consumiendo token HSM -> - Class"+ ConsumerPetitionService.class.getName() + e.getMessage());
+     }
+        return res;
     }
 
     @Async("asyncExecutor")

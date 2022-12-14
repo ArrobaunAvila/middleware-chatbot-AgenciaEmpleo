@@ -1,48 +1,674 @@
-2022-12-12 09:06:38.530 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 1.8.0_352 on ubuntu-vivobook with PID 153808 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
-2022-12-12 09:06:38.536 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
-2022-12-12 09:06:39.450 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-12 09:06:39.519 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 60 ms. Found 5 JPA repository interfaces.
-2022-12-12 09:06:39.858 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=4567dd16-7455-301a-b63d-6e4ee4a249c2
-2022-12-12 09:06:40.430 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
-2022-12-12 09:06:40.444 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
-2022-12-12 09:06:40.445 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
-2022-12-12 09:06:40.654 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
-2022-12-12 09:06:40.655 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 2068 ms
-2022-12-12 09:06:40.910 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
-2022-12-12 09:06:41.368 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
-2022-12-12 09:06:41.428 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-12 09:06:41.485 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
-2022-12-12 09:06:41.696 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-12 09:06:41.828 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
-2022-12-12 09:06:42.527 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-12 09:06:42.535 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-12 09:06:43.604 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-12-12 09:06:44.574 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
-2022-12-12 09:06:44.831 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:61 - Started MiddlewareChatbotAgenciaEmpleoApplication in 6.867 seconds (JVM running for 7.941)
-2022-12-12 09:06:47.713 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-12-12 09:06:47.715 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
-2022-12-12 09:06:47.718 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
-2022-12-12 10:48:17.900 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 1.8.0_352 on ubuntu-vivobook with PID 210589 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
-2022-12-12 10:48:17.903 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
-2022-12-12 10:48:18.984 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-12 10:48:19.046 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 52 ms. Found 5 JPA repository interfaces.
-2022-12-12 10:48:19.271 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=4567dd16-7455-301a-b63d-6e4ee4a249c2
-2022-12-12 10:48:19.846 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
-2022-12-12 10:48:19.855 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
-2022-12-12 10:48:19.856 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
-2022-12-12 10:48:19.960 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
-2022-12-12 10:48:19.960 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 2003 ms
-2022-12-12 10:48:20.334 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
-2022-12-12 10:48:20.740 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
-2022-12-12 10:48:20.789 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-12 10:48:20.840 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
-2022-12-12 10:48:21.021 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-12 10:48:21.193 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
-2022-12-12 10:48:22.066 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-12 10:48:22.079 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-12 10:48:23.155 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-12-12 10:48:23.861 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
-2022-12-12 10:48:24.069 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:61 - Started MiddlewareChatbotAgenciaEmpleoApplication in 6.788 seconds (JVM running for 7.192)
-2022-12-12 10:48:30.039 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-12-12 10:48:30.042 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
-2022-12-12 10:48:30.044 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2022-12-14 09:33:50.274 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 11.0.17 on ubuntu-vivobook with PID 64106 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
+2022-12-14 09:33:50.280 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
+2022-12-14 09:33:51.543 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-14 09:33:51.603 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 51 ms. Found 5 JPA repository interfaces.
+2022-12-14 09:33:51.898 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=1bcc1a24-a30d-3e47-8c10-cea7017fa1b8
+2022-12-14 09:33:52.513 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
+2022-12-14 09:33:52.527 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2022-12-14 09:33:52.529 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-14 09:33:52.686 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
+2022-12-14 09:33:52.686 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 2335 ms
+2022-12-14 09:33:53.011 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2022-12-14 09:33:53.440 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2022-12-14 09:33:53.499 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-14 09:33:53.555 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-14 09:33:53.679 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-14 09:33:53.822 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+2022-12-14 09:33:54.402 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-14 09:33:54.411 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 09:33:55.055 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-14 09:33:55.789 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
+2022-12-14 09:33:56.023 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:61 - Started MiddlewareChatbotAgenciaEmpleoApplication in 6.198 seconds (JVM running for 17.326)
+2022-12-14 09:40:00.017 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:53 - Comenzando traza -->com.middleware.colsubsidio.AgenciaEmpleo.server.ConsumerPetitionServiceCron envios flujos
+2022-12-14 09:40:01.145 [INFO ] [] c.m.c.A.s.ConsumerPetitionService:93 - Se genera token Hsm -->eyJhbGciOiJIUzUxMiJ9.eyJyb2xlc05hbWVzIjpbIk1BU1NJVkVfQVBJIl0sInN1YiI6ImFwaUBjb2xzdWJzaWRpbyIsInJvbGUiOlsiMSJdLCJpZENsaWVudCI6MTY0LCJjYW1wYWluZ3MiOlsiMzUyNiJdLCJwcm9maWxlIjoiMSIsImlkVXN1YXJpbyI6MjY2ODMsInNlc3Npb25JZCI6ImExNzBjNzYwZWI3NTRiOWFhMTgyMDc5ZjFhOGFjZmVlIiwicGVybWlzc2lvbnNOYW1lIjpbIlJQVEkiXSwiaWRVc2VyQXBpIjoyODI2MCwiaWRzZXNpb24iOjAsImVuYWJsZSI6dHJ1ZSwibmFtZSI6IkFQSSBVc2VyIiwiZXhwIjoxNjcxMDcyMDAwLCJpYXQiOjE2NzEwMjg4MDB9.z19DvOnU0h6ZJr28ndyQdcUbGevws5WwLfPd93FMHupZJ6S8b3qGV1yJ03gKOM4Y3EhtY5Ji187MPgEl-oDNjg
+2022-12-14 09:45:00.009 [ERROR] [] o.s.s.s.TaskUtils$LoggingErrorHandler:95 - Unexpected error occurred in scheduled task
+java.lang.NullPointerException: null
+	at com.middleware.colsubsidio.AgenciaEmpleo.server.CronScheduler.scheduleTaskProcessResponseChatbot(CronScheduler.java:25)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-12-14 09:48:27.775 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 09:48:27.777 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2022-12-14 09:48:27.781 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2022-12-14 09:48:43.146 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 11.0.17 on ubuntu-vivobook with PID 79167 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
+2022-12-14 09:48:43.151 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
+2022-12-14 09:48:44.434 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-14 09:48:44.514 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 71 ms. Found 5 JPA repository interfaces.
+2022-12-14 09:48:44.845 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=ad9374c0-b40c-382a-9716-d83d492fa7d8
+2022-12-14 09:48:45.252 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
+2022-12-14 09:48:45.261 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2022-12-14 09:48:45.261 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-14 09:48:45.435 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
+2022-12-14 09:48:45.436 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 2208 ms
+2022-12-14 09:48:45.815 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2022-12-14 09:48:46.258 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2022-12-14 09:48:46.328 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-14 09:48:46.386 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-14 09:48:46.659 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-14 09:48:46.776 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+2022-12-14 09:48:47.285 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-14 09:48:47.291 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 09:48:47.995 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-14 09:48:48.666 [INFO ] [] o.s.b.a.e.w.EndpointLinksResolver:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-14 09:48:49.222 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
+2022-12-14 09:48:49.232 [WARN ] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:591 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+2022-12-14 09:48:49.246 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 09:48:49.249 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2022-12-14 09:48:49.268 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2022-12-14 09:48:49.276 [INFO ] [] o.a.c.c.StandardService:173 - Stopping service [Tomcat]
+2022-12-14 09:48:49.308 [INFO ] [] o.s.b.a.l.ConditionEvaluationReportLoggingListener:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-12-14 09:48:49.339 [ERROR] [] o.s.b.SpringApplication:824 - Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.middleware.colsubsidio.AgenciaEmpleo.MiddlewareChatbotAgenciaEmpleoApplication.main(MiddlewareChatbotAgenciaEmpleoApplication.java:16)
+Caused by: java.lang.NullPointerException: null
+	at springfox.documentation.spring.web.WebMvcPatternsRequestConditionWrapper.getPatterns(WebMvcPatternsRequestConditionWrapper.java:56)
+	at springfox.documentation.RequestHandler.sortedPaths(RequestHandler.java:113)
+	at springfox.documentation.spi.service.contexts.Orderings.lambda$byPatternsCondition$3(Orderings.java:89)
+	at java.base/java.util.Comparator.lambda$comparing$77a9974f$1(Comparator.java:469)
+	at java.base/java.util.TimSort.countRunAndMakeAscending(TimSort.java:355)
+	at java.base/java.util.TimSort.sort(TimSort.java:220)
+	at java.base/java.util.Arrays.sort(Arrays.java:1515)
+	at java.base/java.util.ArrayList.sort(ArrayList.java:1750)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:392)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider.requestHandlers(WebMvcRequestHandlerProvider.java:81)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.withDefaults(AbstractDocumentationPluginsBootstrapper.java:107)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.buildContext(AbstractDocumentationPluginsBootstrapper.java:91)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82)
+	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	... 14 common frames omitted
+2022-12-14 09:50:22.189 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 11.0.17 on ubuntu-vivobook with PID 80901 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
+2022-12-14 09:50:22.194 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
+2022-12-14 09:50:23.395 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-14 09:50:23.489 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 85 ms. Found 5 JPA repository interfaces.
+2022-12-14 09:50:23.744 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=ad9374c0-b40c-382a-9716-d83d492fa7d8
+2022-12-14 09:50:24.149 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
+2022-12-14 09:50:24.157 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2022-12-14 09:50:24.158 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-14 09:50:24.319 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
+2022-12-14 09:50:24.319 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 2062 ms
+2022-12-14 09:50:24.724 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2022-12-14 09:50:25.176 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2022-12-14 09:50:25.237 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-14 09:50:25.297 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-14 09:50:25.505 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-14 09:50:25.645 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+2022-12-14 09:50:26.261 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-14 09:50:26.266 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 09:50:27.014 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-14 09:50:27.588 [INFO ] [] o.s.b.a.e.w.EndpointLinksResolver:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-14 09:50:28.096 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
+2022-12-14 09:50:28.104 [WARN ] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:591 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+2022-12-14 09:50:28.118 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 09:50:28.122 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2022-12-14 09:50:28.128 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2022-12-14 09:50:28.136 [INFO ] [] o.a.c.c.StandardService:173 - Stopping service [Tomcat]
+2022-12-14 09:50:28.167 [INFO ] [] o.s.b.a.l.ConditionEvaluationReportLoggingListener:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-12-14 09:50:28.189 [ERROR] [] o.s.b.SpringApplication:824 - Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.middleware.colsubsidio.AgenciaEmpleo.MiddlewareChatbotAgenciaEmpleoApplication.main(MiddlewareChatbotAgenciaEmpleoApplication.java:16)
+Caused by: java.lang.NullPointerException: null
+	at springfox.documentation.spring.web.WebMvcPatternsRequestConditionWrapper.getPatterns(WebMvcPatternsRequestConditionWrapper.java:56)
+	at springfox.documentation.RequestHandler.sortedPaths(RequestHandler.java:113)
+	at springfox.documentation.spi.service.contexts.Orderings.lambda$byPatternsCondition$3(Orderings.java:89)
+	at java.base/java.util.Comparator.lambda$comparing$77a9974f$1(Comparator.java:469)
+	at java.base/java.util.TimSort.countRunAndMakeAscending(TimSort.java:355)
+	at java.base/java.util.TimSort.sort(TimSort.java:220)
+	at java.base/java.util.Arrays.sort(Arrays.java:1515)
+	at java.base/java.util.ArrayList.sort(ArrayList.java:1750)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:392)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider.requestHandlers(WebMvcRequestHandlerProvider.java:81)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.withDefaults(AbstractDocumentationPluginsBootstrapper.java:107)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.buildContext(AbstractDocumentationPluginsBootstrapper.java:91)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82)
+	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	... 14 common frames omitted
+2022-12-14 09:54:38.185 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 11.0.17 on ubuntu-vivobook with PID 85490 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
+2022-12-14 09:54:38.189 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
+2022-12-14 09:54:39.128 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-14 09:54:39.183 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 49 ms. Found 5 JPA repository interfaces.
+2022-12-14 09:54:39.416 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=ad9374c0-b40c-382a-9716-d83d492fa7d8
+2022-12-14 09:54:39.778 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
+2022-12-14 09:54:39.787 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2022-12-14 09:54:39.787 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-14 09:54:39.980 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
+2022-12-14 09:54:39.981 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 1750 ms
+2022-12-14 09:54:40.310 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2022-12-14 09:54:40.657 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2022-12-14 09:54:40.710 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-14 09:54:40.757 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-14 09:54:40.959 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-14 09:54:41.063 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+2022-12-14 09:54:41.575 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-14 09:54:41.581 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 09:54:42.185 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-14 09:54:42.666 [INFO ] [] o.s.b.a.e.w.EndpointLinksResolver:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-14 09:54:43.087 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
+2022-12-14 09:54:43.094 [WARN ] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:591 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+2022-12-14 09:54:43.112 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 09:54:43.117 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2022-12-14 09:54:43.125 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2022-12-14 09:54:43.130 [INFO ] [] o.a.c.c.StandardService:173 - Stopping service [Tomcat]
+2022-12-14 09:54:43.149 [INFO ] [] o.s.b.a.l.ConditionEvaluationReportLoggingListener:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-12-14 09:54:43.171 [ERROR] [] o.s.b.SpringApplication:824 - Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.middleware.colsubsidio.AgenciaEmpleo.MiddlewareChatbotAgenciaEmpleoApplication.main(MiddlewareChatbotAgenciaEmpleoApplication.java:16)
+Caused by: java.lang.NullPointerException: null
+	at springfox.documentation.spring.web.WebMvcPatternsRequestConditionWrapper.getPatterns(WebMvcPatternsRequestConditionWrapper.java:56)
+	at springfox.documentation.RequestHandler.sortedPaths(RequestHandler.java:113)
+	at springfox.documentation.spi.service.contexts.Orderings.lambda$byPatternsCondition$3(Orderings.java:89)
+	at java.base/java.util.Comparator.lambda$comparing$77a9974f$1(Comparator.java:469)
+	at java.base/java.util.TimSort.countRunAndMakeAscending(TimSort.java:355)
+	at java.base/java.util.TimSort.sort(TimSort.java:220)
+	at java.base/java.util.Arrays.sort(Arrays.java:1515)
+	at java.base/java.util.ArrayList.sort(ArrayList.java:1750)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:392)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider.requestHandlers(WebMvcRequestHandlerProvider.java:81)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.withDefaults(AbstractDocumentationPluginsBootstrapper.java:107)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.buildContext(AbstractDocumentationPluginsBootstrapper.java:91)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82)
+	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	... 14 common frames omitted
+2022-12-14 09:55:54.821 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 11.0.17 on ubuntu-vivobook with PID 86748 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
+2022-12-14 09:55:54.825 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
+2022-12-14 09:55:56.055 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-14 09:55:56.128 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 64 ms. Found 5 JPA repository interfaces.
+2022-12-14 09:55:56.460 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=ad9374c0-b40c-382a-9716-d83d492fa7d8
+2022-12-14 09:55:56.943 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
+2022-12-14 09:55:56.955 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2022-12-14 09:55:56.956 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-14 09:55:57.189 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
+2022-12-14 09:55:57.191 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 2292 ms
+2022-12-14 09:55:57.612 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2022-12-14 09:55:58.048 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2022-12-14 09:55:58.109 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-14 09:55:58.173 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-14 09:55:58.390 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-14 09:55:58.548 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+2022-12-14 09:55:59.226 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-14 09:55:59.233 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 09:55:59.952 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-14 09:56:00.637 [INFO ] [] o.s.b.a.e.w.EndpointLinksResolver:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-14 09:56:01.173 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
+2022-12-14 09:56:01.182 [WARN ] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:591 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+2022-12-14 09:56:01.208 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 09:56:01.212 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2022-12-14 09:56:01.215 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2022-12-14 09:56:01.219 [INFO ] [] o.a.c.c.StandardService:173 - Stopping service [Tomcat]
+2022-12-14 09:56:01.246 [INFO ] [] o.s.b.a.l.ConditionEvaluationReportLoggingListener:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-12-14 09:56:01.270 [ERROR] [] o.s.b.SpringApplication:824 - Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.middleware.colsubsidio.AgenciaEmpleo.MiddlewareChatbotAgenciaEmpleoApplication.main(MiddlewareChatbotAgenciaEmpleoApplication.java:16)
+Caused by: java.lang.NullPointerException: null
+	at springfox.documentation.spring.web.WebMvcPatternsRequestConditionWrapper.getPatterns(WebMvcPatternsRequestConditionWrapper.java:56)
+	at springfox.documentation.RequestHandler.sortedPaths(RequestHandler.java:113)
+	at springfox.documentation.spi.service.contexts.Orderings.lambda$byPatternsCondition$3(Orderings.java:89)
+	at java.base/java.util.Comparator.lambda$comparing$77a9974f$1(Comparator.java:469)
+	at java.base/java.util.TimSort.countRunAndMakeAscending(TimSort.java:355)
+	at java.base/java.util.TimSort.sort(TimSort.java:220)
+	at java.base/java.util.Arrays.sort(Arrays.java:1515)
+	at java.base/java.util.ArrayList.sort(ArrayList.java:1750)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:392)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider.requestHandlers(WebMvcRequestHandlerProvider.java:81)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.withDefaults(AbstractDocumentationPluginsBootstrapper.java:107)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.buildContext(AbstractDocumentationPluginsBootstrapper.java:91)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82)
+	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	... 14 common frames omitted
+2022-12-14 09:59:52.563 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 11.0.17 on ubuntu-vivobook with PID 90401 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
+2022-12-14 09:59:52.567 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
+2022-12-14 09:59:53.944 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-14 09:59:54.027 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 75 ms. Found 5 JPA repository interfaces.
+2022-12-14 09:59:54.385 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=ad9374c0-b40c-382a-9716-d83d492fa7d8
+2022-12-14 09:59:54.843 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
+2022-12-14 09:59:54.855 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2022-12-14 09:59:54.855 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-14 09:59:55.125 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
+2022-12-14 09:59:55.125 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 2490 ms
+2022-12-14 09:59:55.560 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2022-12-14 09:59:56.054 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2022-12-14 09:59:56.122 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-14 09:59:56.197 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-14 09:59:56.484 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-14 09:59:56.662 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+2022-12-14 09:59:57.391 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-14 09:59:57.401 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 09:59:58.301 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-14 09:59:59.102 [INFO ] [] o.s.b.a.e.w.EndpointLinksResolver:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-14 09:59:59.704 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
+2022-12-14 09:59:59.714 [WARN ] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:591 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+2022-12-14 09:59:59.726 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 09:59:59.729 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2022-12-14 10:00:02.527 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2022-12-14 10:00:02.531 [INFO ] [] o.a.c.c.StandardService:173 - Stopping service [Tomcat]
+2022-12-14 10:00:02.563 [INFO ] [] o.s.b.a.l.ConditionEvaluationReportLoggingListener:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-12-14 10:00:02.584 [ERROR] [] o.s.b.SpringApplication:824 - Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.middleware.colsubsidio.AgenciaEmpleo.MiddlewareChatbotAgenciaEmpleoApplication.main(MiddlewareChatbotAgenciaEmpleoApplication.java:16)
+Caused by: java.lang.NullPointerException: null
+	at springfox.documentation.spring.web.WebMvcPatternsRequestConditionWrapper.getPatterns(WebMvcPatternsRequestConditionWrapper.java:56)
+	at springfox.documentation.RequestHandler.sortedPaths(RequestHandler.java:113)
+	at springfox.documentation.spi.service.contexts.Orderings.lambda$byPatternsCondition$3(Orderings.java:89)
+	at java.base/java.util.Comparator.lambda$comparing$77a9974f$1(Comparator.java:469)
+	at java.base/java.util.TimSort.countRunAndMakeAscending(TimSort.java:355)
+	at java.base/java.util.TimSort.sort(TimSort.java:220)
+	at java.base/java.util.Arrays.sort(Arrays.java:1515)
+	at java.base/java.util.ArrayList.sort(ArrayList.java:1750)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:392)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider.requestHandlers(WebMvcRequestHandlerProvider.java:81)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.withDefaults(AbstractDocumentationPluginsBootstrapper.java:107)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.buildContext(AbstractDocumentationPluginsBootstrapper.java:91)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82)
+	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	... 14 common frames omitted
+2022-12-14 10:06:34.495 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 11.0.17 on ubuntu-vivobook with PID 96155 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
+2022-12-14 10:06:34.503 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
+2022-12-14 10:06:37.464 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-14 10:06:37.681 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 199 ms. Found 5 JPA repository interfaces.
+2022-12-14 10:06:38.327 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=58e70695-e393-3800-a249-3a674f2112c4
+2022-12-14 10:06:39.338 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
+2022-12-14 10:06:39.381 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2022-12-14 10:06:39.384 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-14 10:06:39.867 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
+2022-12-14 10:06:39.869 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 5162 ms
+2022-12-14 10:06:40.840 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2022-12-14 10:06:42.082 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2022-12-14 10:06:42.231 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-14 10:06:42.378 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-14 10:06:42.913 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-14 10:06:43.260 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+2022-12-14 10:06:44.925 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-14 10:06:44.945 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 10:06:46.760 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-14 10:06:48.133 [INFO ] [] o.s.b.a.e.w.EndpointLinksResolver:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-14 10:06:49.499 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
+2022-12-14 10:06:49.517 [WARN ] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:591 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+2022-12-14 10:06:49.584 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 10:06:49.591 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2022-12-14 10:06:49.621 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2022-12-14 10:06:49.629 [INFO ] [] o.a.c.c.StandardService:173 - Stopping service [Tomcat]
+2022-12-14 10:06:49.702 [INFO ] [] o.s.b.a.l.ConditionEvaluationReportLoggingListener:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-12-14 10:06:49.745 [ERROR] [] o.s.b.SpringApplication:824 - Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.middleware.colsubsidio.AgenciaEmpleo.MiddlewareChatbotAgenciaEmpleoApplication.main(MiddlewareChatbotAgenciaEmpleoApplication.java:18)
+Caused by: java.lang.NullPointerException: null
+	at springfox.documentation.spring.web.WebMvcPatternsRequestConditionWrapper.getPatterns(WebMvcPatternsRequestConditionWrapper.java:56)
+	at springfox.documentation.RequestHandler.sortedPaths(RequestHandler.java:113)
+	at springfox.documentation.spi.service.contexts.Orderings.lambda$byPatternsCondition$3(Orderings.java:89)
+	at java.base/java.util.Comparator.lambda$comparing$77a9974f$1(Comparator.java:469)
+	at java.base/java.util.TimSort.countRunAndMakeAscending(TimSort.java:355)
+	at java.base/java.util.TimSort.sort(TimSort.java:220)
+	at java.base/java.util.Arrays.sort(Arrays.java:1515)
+	at java.base/java.util.ArrayList.sort(ArrayList.java:1750)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:392)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider.requestHandlers(WebMvcRequestHandlerProvider.java:81)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.withDefaults(AbstractDocumentationPluginsBootstrapper.java:107)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.buildContext(AbstractDocumentationPluginsBootstrapper.java:91)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82)
+	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	... 14 common frames omitted
+2022-12-14 10:18:41.491 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 11.0.17 on ubuntu-vivobook with PID 100519 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
+2022-12-14 10:18:41.494 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
+2022-12-14 10:18:42.463 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-14 10:18:42.516 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 45 ms. Found 5 JPA repository interfaces.
+2022-12-14 10:18:42.744 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=58e70695-e393-3800-a249-3a674f2112c4
+2022-12-14 10:18:43.092 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
+2022-12-14 10:18:43.100 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2022-12-14 10:18:43.101 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-14 10:18:43.262 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
+2022-12-14 10:18:43.262 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 1710 ms
+2022-12-14 10:18:43.591 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2022-12-14 10:18:44.008 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2022-12-14 10:18:44.066 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-14 10:18:44.113 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-14 10:18:44.269 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-14 10:18:44.424 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+2022-12-14 10:18:45.024 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-14 10:18:45.038 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 10:18:45.657 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-14 10:18:46.195 [INFO ] [] o.s.b.a.e.w.EndpointLinksResolver:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-14 10:18:46.662 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
+2022-12-14 10:18:46.670 [WARN ] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:591 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+2022-12-14 10:18:46.681 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 10:18:46.690 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2022-12-14 10:18:46.694 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2022-12-14 10:18:46.699 [INFO ] [] o.a.c.c.StandardService:173 - Stopping service [Tomcat]
+2022-12-14 10:18:46.731 [INFO ] [] o.s.b.a.l.ConditionEvaluationReportLoggingListener:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-12-14 10:18:46.751 [ERROR] [] o.s.b.SpringApplication:824 - Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.middleware.colsubsidio.AgenciaEmpleo.MiddlewareChatbotAgenciaEmpleoApplication.main(MiddlewareChatbotAgenciaEmpleoApplication.java:18)
+Caused by: java.lang.NullPointerException: null
+	at springfox.documentation.spring.web.WebMvcPatternsRequestConditionWrapper.getPatterns(WebMvcPatternsRequestConditionWrapper.java:56)
+	at springfox.documentation.RequestHandler.sortedPaths(RequestHandler.java:113)
+	at springfox.documentation.spi.service.contexts.Orderings.lambda$byPatternsCondition$3(Orderings.java:89)
+	at java.base/java.util.Comparator.lambda$comparing$77a9974f$1(Comparator.java:469)
+	at java.base/java.util.TimSort.countRunAndMakeAscending(TimSort.java:355)
+	at java.base/java.util.TimSort.sort(TimSort.java:220)
+	at java.base/java.util.Arrays.sort(Arrays.java:1515)
+	at java.base/java.util.ArrayList.sort(ArrayList.java:1750)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:392)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider.requestHandlers(WebMvcRequestHandlerProvider.java:81)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.withDefaults(AbstractDocumentationPluginsBootstrapper.java:107)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.buildContext(AbstractDocumentationPluginsBootstrapper.java:91)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82)
+	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	... 14 common frames omitted
+2022-12-14 10:29:23.056 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:55 - Starting MiddlewareChatbotAgenciaEmpleoApplication using Java 11.0.17 on ubuntu-vivobook with PID 110348 (/home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE/target/classes started by daniel in /home/daniel/Documentos/desarrollo/develop_works/projects/middleware-chatbot-AE)
+2022-12-14 10:29:23.059 [INFO ] [] c.m.c.A.MiddlewareChatbotAgenciaEmpleoApplication:634 - No active profile set, falling back to 1 default profile: "default"
+2022-12-14 10:29:23.963 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-14 10:29:24.009 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 40 ms. Found 5 JPA repository interfaces.
+2022-12-14 10:29:24.215 [INFO ] [] o.s.c.c.s.GenericScope:283 - BeanFactory id=58e70695-e393-3800-a249-3a674f2112c4
+2022-12-14 10:29:24.554 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8081 (http)
+2022-12-14 10:29:24.561 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2022-12-14 10:29:24.562 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-14 10:29:24.728 [INFO ] [] o.a.c.c.C.[.[.[/api]:173 - Initializing Spring embedded WebApplicationContext
+2022-12-14 10:29:24.728 [INFO ] [] o.s.b.w.s.c.ServletWebServerApplicationContext:292 - Root WebApplicationContext: initialization completed in 1621 ms
+2022-12-14 10:29:25.015 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2022-12-14 10:29:25.358 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2022-12-14 10:29:25.404 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-14 10:29:25.456 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-14 10:29:25.592 [INFO ] [] o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-14 10:29:25.700 [INFO ] [] o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+2022-12-14 10:29:26.188 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-14 10:29:26.194 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 10:29:26.775 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-14 10:29:27.221 [INFO ] [] o.s.b.a.e.w.EndpointLinksResolver:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-14 10:29:27.618 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8081 (http) with context path '/api'
+2022-12-14 10:29:27.625 [WARN ] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:591 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+2022-12-14 10:29:27.655 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-14 10:29:27.658 [INFO ] [] c.z.h.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2022-12-14 10:29:27.668 [INFO ] [] c.z.h.HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2022-12-14 10:29:27.673 [INFO ] [] o.a.c.c.StandardService:173 - Stopping service [Tomcat]
+2022-12-14 10:29:27.691 [INFO ] [] o.s.b.a.l.ConditionEvaluationReportLoggingListener:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-12-14 10:29:27.705 [ERROR] [] o.s.b.SpringApplication:824 - Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.middleware.colsubsidio.AgenciaEmpleo.MiddlewareChatbotAgenciaEmpleoApplication.main(MiddlewareChatbotAgenciaEmpleoApplication.java:18)
+Caused by: java.lang.NullPointerException: null
+	at springfox.documentation.spring.web.WebMvcPatternsRequestConditionWrapper.getPatterns(WebMvcPatternsRequestConditionWrapper.java:56)
+	at springfox.documentation.RequestHandler.sortedPaths(RequestHandler.java:113)
+	at springfox.documentation.spi.service.contexts.Orderings.lambda$byPatternsCondition$3(Orderings.java:89)
+	at java.base/java.util.Comparator.lambda$comparing$77a9974f$1(Comparator.java:469)
+	at java.base/java.util.TimSort.countRunAndMakeAscending(TimSort.java:355)
+	at java.base/java.util.TimSort.sort(TimSort.java:220)
+	at java.base/java.util.Arrays.sort(Arrays.java:1515)
+	at java.base/java.util.ArrayList.sort(ArrayList.java:1750)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:392)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider.requestHandlers(WebMvcRequestHandlerProvider.java:81)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.withDefaults(AbstractDocumentationPluginsBootstrapper.java:107)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.buildContext(AbstractDocumentationPluginsBootstrapper.java:91)
+	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82)
+	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178)
+	... 14 common frames omitted

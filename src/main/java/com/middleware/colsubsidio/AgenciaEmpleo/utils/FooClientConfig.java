@@ -46,7 +46,8 @@ public class FooClientConfig implements AsyncUncaughtExceptionHandler {
 	public Decoder feignDecoder() {
 		HttpMessageConverter<?> jacksonConverter = new MappingJackson2HttpMessageConverter(customObjectMapper());
 		ObjectFactory<HttpMessageConverters> objectFactory = () -> new HttpMessageConverters(jacksonConverter);
-		return new ResponseEntityDecoder(new SpringDecoder(objectFactory));
+		return new ResponseEntityDecoder(new SpringDecoder(objectFactory, null));
+		
 	}
 
 	@Bean

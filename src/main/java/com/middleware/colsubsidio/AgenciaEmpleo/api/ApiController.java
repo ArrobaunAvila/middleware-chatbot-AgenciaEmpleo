@@ -43,7 +43,7 @@ public class ApiController {
     @RequestMapping(value = "/processcvpreselection", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<ResponseDTO> processCvPreselection(@RequestBody InformacionHojaDeVidaRequest informationVacantRequest) {
-        return new ResponseEntity(this.controllerBussiness.procesoHojaDeVidaSeleccionada(informationVacantRequest), HttpStatus.OK);
+        return new ResponseEntity<>(this.controllerBussiness.procesoHojaDeVidaSeleccionada(informationVacantRequest), HttpStatus.OK);
     }
 
 
@@ -55,7 +55,7 @@ public class ApiController {
     @RequestMapping(value = "/processregisterCourse", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<ResponseDTO> processRegisterCourse(@RequestBody InformacionCursoRequest informacionCursoRequest) {
-        return new ResponseEntity(this.controllerBussiness.procesoRegistroACurso(informacionCursoRequest), HttpStatus.OK);
+        return new ResponseEntity<>(this.controllerBussiness.procesoRegistroACurso(informacionCursoRequest), HttpStatus.OK);
     }
 
 
@@ -79,7 +79,7 @@ public class ApiController {
     @RequestMapping(value = "/processvacancy", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<ResponseDTO> processVacancyInformation(@RequestBody ArrayList<InformacionVacanteRequest> informacionVacanteRequest){
-       return new ResponseEntity(this.controllerBussiness.procesoInformacionVacanteGestion(informacionVacanteRequest),HttpStatus.OK);
+       return new ResponseEntity<>(this.controllerBussiness.procesoInformacionVacanteGestion(informacionVacanteRequest),HttpStatus.OK);
     }
 
     @ApiResponses({
@@ -90,14 +90,14 @@ public class ApiController {
    @PostMapping("/processpreselection")
    @ResponseBody
    public ResponseEntity<ResponseDTO> processcvmessage4(@RequestBody InformacionHojaDeVidaRequest informacionHojaDeVidaRequest){
-     return new ResponseEntity(this.controllerBussiness.procesoPreselection(informacionHojaDeVidaRequest), HttpStatus.OK);
+     return new ResponseEntity<>(this.controllerBussiness.procesoPreselection(informacionHojaDeVidaRequest), HttpStatus.OK);
    }
 
    @ApiOperation(value = "flujo para registrar respuesta chatbot user" , hidden = true)
    @PostMapping("/processResponseChatbotRegister")
    @ResponseBody
    public ResponseEntity<?> processResponseChatbotRegister(@RequestBody ProcessChatbotRequest processChatbotRequest){
-       return new ResponseEntity(this.controllerBussiness.procesoRegisterResponseUserChatBot(processChatbotRequest), HttpStatus.OK);
+       return new ResponseEntity<>(this.controllerBussiness.procesoRegisterResponseUserChatBot(processChatbotRequest), HttpStatus.OK);
    }
 
 }

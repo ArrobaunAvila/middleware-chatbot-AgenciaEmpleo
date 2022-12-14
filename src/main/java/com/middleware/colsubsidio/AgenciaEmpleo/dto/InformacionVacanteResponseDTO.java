@@ -2,7 +2,6 @@ package com.middleware.colsubsidio.AgenciaEmpleo.dto;
 
 import lombok.*;
 
-import java.util.List;
 
 @Builder
 @AllArgsConstructor

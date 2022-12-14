@@ -56,10 +56,8 @@ public class GsonUtils {
         public Map<String, String> deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
             Map<String, String> map = new HashMap<>();
             if (json.isJsonArray()) {
-                int i = 0;
                 for (JsonElement e : json.getAsJsonArray()) {
                     map.putAll(deserialize(e, typeOfT, context));
-                    i++;
                 }
             } else if (json.isJsonObject()) {
                 for (Map.Entry<String, JsonElement> entry : json.getAsJsonObject().entrySet()) {

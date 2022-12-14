@@ -1,8 +1,6 @@
 package com.middleware.colsubsidio.AgenciaEmpleo.utils;
 
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
@@ -10,16 +8,12 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.util.Base64Utils;
 
 @Component
 @Slf4j
 public class Utils {
 
-        @Autowired
-    private PropertiesUtil propertiesUtil;
 
     public String uuid(){
         return UUID.randomUUID().toString();
@@ -43,6 +37,10 @@ public class Utils {
         }
     }
 
+    public boolean validaCriterioSoloLetras(String cadena){
+        return cadena.matches("^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$");
+    }
+
     public boolean validateObjects(List<Object> object) {
         boolean validated = true;
         for(Object obj: object){
@@ -61,5 +59,4 @@ public class Utils {
         log.info("Traza objetcMapperString() --> Json de envio" + json);
         return json;
     }
-
 }

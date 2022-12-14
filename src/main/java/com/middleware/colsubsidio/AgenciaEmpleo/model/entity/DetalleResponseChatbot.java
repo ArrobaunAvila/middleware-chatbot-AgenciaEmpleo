@@ -24,10 +24,14 @@ public class DetalleResponseChatbot{
 
   @Column(name = "response_chatbot")
   private String responseChatBot;
+
+  @Column(name = "celular")
   private String celular;
-
+  
+  @Column(name = "interes")
   private int interes;
-
+  
+  @Column(name = "contactar")
   private int contactar;
 
   @Temporal(TemporalType.TIMESTAMP)

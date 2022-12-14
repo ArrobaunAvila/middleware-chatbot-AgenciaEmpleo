@@ -1,18 +1,15 @@
 package com.middleware.colsubsidio.AgenciaEmpleo.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.google.gson.Gson;
 import com.middleware.colsubsidio.AgenciaEmpleo.dto.*;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.*;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.*;
 import com.middleware.colsubsidio.AgenciaEmpleo.model.entity.InformacionVacante;
-import com.middleware.colsubsidio.AgenciaEmpleo.model.repository.DetalleChatbotRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;

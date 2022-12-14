@@ -19,7 +19,6 @@ public class PublicarService {
     @Autowired
     private DetalleChatbotRepository detalleChatbotRepository;
 
-    @Autowired
     public PublicarService(InformacionVacanteRepository informacionVacanteRepository, DetalleRepository detalleRepository, InformacionRegistroCursoRepository informacionRegistroCursoRepository, AgendaCitaRepository agendaCitaRepository) {
         this.informacionVacanteRepository = informacionVacanteRepository;
         this.detalleRepository = detalleRepository;

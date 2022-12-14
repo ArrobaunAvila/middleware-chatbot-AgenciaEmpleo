@@ -1,7 +1,5 @@
 package com.middleware.colsubsidio.AgenciaEmpleo.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
 @Builder

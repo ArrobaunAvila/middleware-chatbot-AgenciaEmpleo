@@ -2,7 +2,6 @@ package com.middleware.colsubsidio.AgenciaEmpleo.utils;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
@@ -109,5 +108,5 @@ public class PropertiesUtil {
     private String queryAllDetallesChatbot;
 
     @Value("${database.sqlServer.query.detalle.sql2}")
-    private String queryDetalleByCelular;
+    private String queryDetalleByCelularInformacionVacante;
 }
